@@ -1,0 +1,87 @@
+/* Font Family Persian */
+
+
+@font-face {
+    font-family: vazir1;
+    src: url('../fonts/IRANSansWeb_Medium.woff');
+}
+@font-face {
+    font-family: vazir;
+    src: url('../fonts/Vazir.ttf');
+}
+
+
+body {
+    font-family: vazir1;
+
+}
+
+.Fvazir {
+    font-family: vazir1;
+}
+.Fvazir1{
+    
+    font-family: vazir !important;
+    font-weight: bolder;
+
+    margin-top: 7px;
+}
+
+@media (max-width:762px) {
+    .Fvazir1{
+        font-size: 1.3rem !important;
+    }
+}
+
+
+.font1 {
+    font-size: 0.7rem !important;
+}
+
+.font2 {
+    font-size: 0.8rem !important;
+}
+
+.font3 {
+    font-size: 0.9rem !important;
+}
+
+.font4 {
+    font-size: 1rem !important;
+}
+
+.font5 {
+    font-size: 1.1rem;
+}
+.headerText{
+    font-size: 1.1rem;
+}
+
+.font6 {
+    font-size: 1.2rem;
+}
+
+.font7 {
+    font-size: 1.3rem !important;
+}
+
+.font8 {
+    font-size: 1.4rem;
+
+}
+
+.font9 {
+    font-size: 1.5rem;
+}
+
+
+@media (max-width:576px) {
+    .fontm9 {
+        font-size: 1.8rem !important;
+
+    }
+}
+
+.font10 {
+    font-size: 1.8rem;
+}

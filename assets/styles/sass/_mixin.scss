@@ -1,0 +1,26 @@
+@mixin Flex () {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin hoverBtn (){
+    background-color: $boxColor;
+    color: $dark !important;
+    border: 1px solid rgba($color: #000000, $alpha: .1);
+}
+
+@mixin BoxShadow () {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px !important;
+}
+
+
+@mixin borderRight ($value){
+    border-right: 2px solid $value;
+}
+
+
+@mixin Border-no-left ($value){
+    border-right: 1px solid $value !important;
+    border-bottom: 1px solid $value !important;
+    border-top: 1px solid $value !important;
+}

@@ -1,0 +1,352 @@
+// imports
+
+@import "./mixin.scss";
+@import "./tabel.scss";
+@import "./fonts.scss";
+@import "./animation.scss";
+@import "grid";
+
+// variable color
+
+$BrandBook:#FF5A24;
+$BrandBookHover:rgb(227, 224, 224);
+$dark:#000000;
+$LightGray:#FAFAFA;
+$BlightGray:#F1F1F1;
+$blueBrand:#0076FE;
+$bodyColor:#f5f5f5;
+$boxColor:#EDEDED;
+$ColorText:#766671;
+$borderFocus:#b2b2b2;
+$white:#fff;
+
+
+@mixin Flex () {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin hoverBtn () {
+    background-color: $boxColor;
+    color: $dark !important;
+    border: 1px solid rgba($color: #000000, $alpha: .1);
+}
+
+@mixin BoxShadow () {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px !important;
+}
+
+
+@mixin borderRight ($value) {
+    border-right: 2px solid $value;
+
+}
+
+@mixin Border-no-left ($value) {
+    border-right: 1px solid $value !important;
+    border-bottom: 1px solid $value !important;
+    border-top: 1px solid $value !important;
+
+
+}
+
+
+// *************************************
+// defualt styls 
+// *************************************
+
+// button:focus {
+//     border: none !important;
+//     outline: none !important;
+// }
+
+// form-control:focus {
+//     border-color: #ced4da !important;
+//     box-shadow: none !important;
+// } 
+
+body {
+    background: $bodyColor;
+}
+
+body.lightG1 {
+    background: $bodyColor !important;
+    color: $ColorText;
+
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+
+    }
+}
+
+
+
+input::placeholder {
+    color: #cecccc;
+}
+
+
+button:focus,
+button:hover,
+button:active button:focus-visible,
+.btn:focus,
+.btn:hover,
+.btn:active,
+.btn {
+    outline: none !important;
+    border: none !important;
+}
+
+
+
+.bBrand {
+    background-color: $BrandBook;
+    transition: all .3s;
+
+    &:hover {
+        @include hoverBtn();
+    }
+}
+
+.bBlue {
+    background-color: $blueBrand;
+    transition: all .3s;
+
+    &:hover {
+        @include hoverBtn();
+    }
+}
+
+.shake {
+    animation: shake 1.5s;
+}
+
+.Star {
+    color: #dc3545 !important;
+}
+
+hr:not([size]) {
+    height: .8px;
+}
+
+.z-index-h {
+    z-index: 3;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.cBlue {
+    color: $blueBrand;
+}
+
+@media (max-width:543px) {
+    .font-sm-2 {
+        font-size: .9rem !important;
+    }
+}
+
+.d-flex1 {
+    display: flex;
+}
+
+.underlineA {
+    border-bottom: 1px solid $blueBrand;
+    text-decoration: none;
+}
+
+.noUnderLine {
+    text-decoration: none !important;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.noBold {
+    font-weight: 400 !important;
+
+}
+
+.badge {
+    font-weight: 100 !important;
+}
+
+.img-view {
+    max-width: 100%;
+    height: 350px;
+}
+
+.d-flexx {
+    display: flex;
+}
+
+.bg-blue-dark {
+    background-color: #2F2E41;
+    color: #dcdcdc;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+.text-dark-in *{
+    color: #000000 ;
+}
+.w-line , .w-line2 , .w-line3{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+// *************************************
+//? deposit
+//*************************************
+
+main {
+    .text-notic {
+        line-height: 40px;
+        font-size: 1rem;
+    }
+}
+
+.headerText {
+    h1 {
+        font-size: 1.6rem;
+        color: hsl(210, 11%, 15%);
+        line-height: 45px;
+    }
+
+
+
+    h5 {
+        line-height: 35px;
+
+    }
+}
+
+
+// *************************************
+//? signUP
+//*************************************
+.box-Accountiong {
+    background: #ffffff;
+    border-radius: 4px;
+    // @include BoxShadow();
+    border: 1px solid rgba($color: #000000, $alpha: .1);
+}
+
+.formStyle {
+    margin-bottom: .3rem;
+    display: block;
+    width: 100%;
+}
+
+.formStyle2,
+.formStyle,
+.formStyle3 {
+    background: $LightGray;
+    border: 1px solid $BlightGray;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: all .5s;
+}
+
+.formStyle3:focus {
+    border: 1px solid $borderFocus !important;
+    background-color: #fff;
+    outline: none !important;
+}
+
+.focus {
+    border: 1px solid $borderFocus !important;
+    background-color: #fff;
+    outline: none !important;
+}
+
+.formStyle,
+.formStyle2 {
+    outline: none !important;
+
+}
+
+
+.hoverBgPassWord {
+    @include Border-no-left($BlightGray);
+
+    &:hover {
+        background: $BlightGray !important;
+        @include Border-no-left($BlightGray);
+        color: $dark !important;
+    }
+
+    &:active,
+    &:focus,
+    &:focus-visible {
+        @include Border-no-left($BlightGray);
+
+    }
+
+
+}
+
+
+//********************
+//? Payment
+//********************
+
+.border-unfx-Right {
+    @include borderRight($BrandBook);
+}
+
+.border-unfx-Right-1 {
+    @include borderRight($blueBrand);
+
+}
+
+
+
+//******************
+//? Compnents styls
+//******************
+
+.labelBox {
+    position: absolute;
+    top: -9px;
+    right: 8px;
+    background: #fff;
+    padding: 0 10;
+}
+
+@media (max-width:512px) {
+    .w-sm-100 {
+        width: 100% !important;
+    }
+}
+
+
+.img-detils-width{
+    width: auto !important;
+}
+
+@media (max-width:576px) {
+    .img-detils-width{
+        width: 95% !important;
+    }
+}

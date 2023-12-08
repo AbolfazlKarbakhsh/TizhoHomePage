@@ -1,0 +1,158 @@
+// tabels
+
+.tabs {
+    display: flex;
+}
+
+.heading-table {
+    background: #CCCCCC;
+    color: #272727;
+}
+
+.heading-table-1 {
+    background: #edecec;
+    color: #000000;
+}
+
+
+
+.tab,
+.sub-tab {
+    padding: 10px 20px;
+    background-color: #FF5A24;
+    color: #FFFFFF;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.tab-content,
+.sub-tab-content {
+    display: none;
+    padding-top: 20px;
+    /* // padding: 20px; */
+
+}
+
+.tab,
+.sub-tab {
+    transition: all ease-in-out .3s;
+}
+
+.sub-tabs {
+    display: flex;
+}
+
+/* / Responsive styles / */
+@media screen and (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .tab,
+    .sub-tab {
+        margin-top: 20px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .sub-tabs {
+        flex-direction: column;
+    }
+
+    .sub-tab {
+        padding: 8px 12px;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
+
+.unfxb_active_tab {
+    background: #24D9FF;
+}
+
+.unfxb_deactive_tab {
+    background: #FF5A24;
+}
+
+
+/* / Table Style / */
+
+.unfxb_table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.unfxb_table:hover {}
+
+
+
+.table-in-div {
+    overflow-x: auto;
+}
+
+.unfxb_table td,
+th {
+    padding: 8px;
+    text-align: center !important;
+}
+
+.unfxb_table td {}
+
+.unfxb_table th>small {
+    color: #CCCCCC;
+}
+
+.unfxb_table th>.small {
+    color: #231f1f;
+}
+
+.unfxb_table {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all ease .3s !important;
+}
+
+.unfxb_table * {
+    transition: all ease .3s !important;
+
+}
+
+.row-hover {
+    transition: all ease-in-out .1s;
+}
+
+.row-hover:hover {
+    background: #cccccc34;
+}
+
+.no-border {
+    display: none;
+}
+
+
+.unfxb_table td {
+    text-align: justify;
+
+}
+
+.unfxb_table ins {
+    color: #FF5A24;
+}
+
+@media (max-width: 768px) {
+
+
+    .unfxb_table th {
+        text-align: center;
+        border: none !important;
+    }
+
+    .unfxb_table .hidden-content {
+        display: table-row;
+    }
+
+    .unfxb_table tr.hidden-content td {
+        border: none !important;
+        padding: 0;
+    }
+}

@@ -1,0 +1,58 @@
+@keyframes bounceIn {
+    0% {
+        transform: scale(1);
+
+    }
+    
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes bounceOut {
+    0% {
+        transform: scale(0.8);
+
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+    /* table animation  */
+    .transition {
+      animation-name: slide-down;
+      animation-duration: 1s;
+  }
+
+
+  @keyframes slide-down {
+      from {
+          opacity: 0;
+          transform: translateY(-10px);
+      }
+
+      
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
