@@ -133,27 +133,30 @@ th {
     padding: 0;
   }
 }
-/* Font Family Persian */
-@font-face {
-  font-family: vazir1;
-  src: url("../fonts/IRANSansWeb_Medium.woff");
-}
 @font-face {
   font-family: vazir;
-  src: url("../fonts/Vazir.ttf");
+  src: url("../fonts/IRANSansX-Bold.ttf");
 }
-body , * {
+@font-face {
+  font-family: sarbaz;
+  src: url("../fonts/Sarbaz.ttf");
+}
+body {
   font-family: vazir;
 }
 
 .Fvazir {
-  font-family: vazir;
+  font-family: vazir1;
 }
 
 .Fvazir1 {
   font-family: vazir !important;
   font-weight: bolder;
   margin-top: 7px;
+}
+
+.fsarbaz {
+  font-family: sarbaz;
 }
 
 @media (max-width: 762px) {
@@ -181,6 +184,11 @@ body , * {
   font-size: 1.1rem;
 }
 
+@media (max-width: 712px) {
+  .whb-main-header div {
+    padding: 10px 0 !important;
+  }
+}
 .headerText {
   font-size: 1.1rem;
 }
@@ -256,6 +264,21 @@ body , * {
     transform: translateY(0);
   }
 }
+swiper-container {
+  width: 100%;
+  height: 350px !important;
+}
+
+swiper-slide {
+  height: 320px !important;
+  width: 320px !important;
+}
+
+.swiper {
+  height: 800px !important;
+  width: 100%;
+}
+
 .header {
   right: 0;
   width: 100%;
@@ -740,7 +763,8 @@ button {
 }
 
 body {
-  background: #f5f5f5;
+  background: #fff;
+  overflow-x: hidden;
 }
 
 body.lightG1 {
@@ -753,6 +777,11 @@ a {
 }
 a:hover {
   text-decoration: none;
+}
+
+.overflow-y {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 input::-moz-placeholder {
@@ -775,13 +804,8 @@ button:active button:focus-visible,
 }
 
 .bBrand {
-  background-color: #FF5A24;
+  background-color: #00695C;
   transition: all 0.3s;
-}
-.bBrand:hover {
-  background-color: #EDEDED;
-  color: #000000 !important;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .bBlue {
@@ -804,6 +828,20 @@ button:active button:focus-visible,
 
 hr:not([size]) {
   height: 0.8px;
+}
+
+.text-brand {
+  color: #00695C;
+}
+
+.text-sec {
+  color: #00695C;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .z-index-h {
@@ -870,7 +908,9 @@ hr:not([size]) {
   color: #000000;
 }
 
-.w-line, .w-line2, .w-line3 {
+.w-line,
+.w-line2,
+.w-line3 {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -955,14 +995,165 @@ main .text-notic {
   border-top: 1px solid #F1F1F1 !important;
 }
 
-.border-unfx-Right {
-  border-right: 2px solid #FF5A24;
+.Loader-site {
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  inset: 0px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.border-unfx-Right-1 {
-  border-right: 2px solid #0076FE;
+.pencil {
+  display: block;
+  width: 10em;
+  height: 10em;
 }
 
+.pencil__body1,
+.pencil__body2,
+.pencil__body3,
+.pencil__eraser,
+.pencil__eraser-skew,
+.pencil__point,
+.pencil__rotate,
+.pencil__stroke {
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pencil__body1,
+.pencil__body2,
+.pencil__body3 {
+  transform: rotate(-90deg);
+}
+
+.pencil__body1 {
+  animation-name: pencilBody1;
+}
+
+.pencil__body2 {
+  animation-name: pencilBody2;
+}
+
+.pencil__body3 {
+  animation-name: pencilBody3;
+}
+
+.pencil__eraser {
+  animation-name: pencilEraser;
+  transform: rotate(-90deg) translate(49px, 0);
+}
+
+.pencil__eraser-skew {
+  animation-name: pencilEraserSkew;
+  animation-timing-function: ease-in-out;
+}
+
+.pencil__point {
+  animation-name: pencilPoint;
+  transform: rotate(-90deg) translate(49px, -30px);
+}
+
+.pencil__rotate {
+  animation-name: pencilRotate;
+}
+
+.pencil__stroke {
+  animation-name: pencilStroke;
+  transform: translate(100px, 100px) rotate(-113deg);
+}
+
+/* Animations */
+@keyframes pencilBody1 {
+  from, to {
+    stroke-dashoffset: 351.86;
+    transform: rotate(-90deg);
+  }
+  50% {
+    stroke-dashoffset: 150.8;
+    /* 3/8 of diameter */
+    transform: rotate(-225deg);
+  }
+}
+@keyframes pencilBody2 {
+  from, to {
+    stroke-dashoffset: 406.84;
+    transform: rotate(-90deg);
+  }
+  50% {
+    stroke-dashoffset: 174.36;
+    transform: rotate(-225deg);
+  }
+}
+@keyframes pencilBody3 {
+  from, to {
+    stroke-dashoffset: 296.88;
+    transform: rotate(-90deg);
+  }
+  50% {
+    stroke-dashoffset: 127.23;
+    transform: rotate(-225deg);
+  }
+}
+@keyframes pencilEraser {
+  from, to {
+    transform: rotate(-45deg) translate(49px, 0);
+  }
+  50% {
+    transform: rotate(0deg) translate(49px, 0);
+  }
+}
+@keyframes pencilEraserSkew {
+  from, 32.5%, 67.5%, to {
+    transform: skewX(0);
+  }
+  35%, 65% {
+    transform: skewX(-4deg);
+  }
+  37.5%, 62.5% {
+    transform: skewX(8deg);
+  }
+  40%, 45%, 50%, 55%, 60% {
+    transform: skewX(-15deg);
+  }
+  42.5%, 47.5%, 52.5%, 57.5% {
+    transform: skewX(15deg);
+  }
+}
+@keyframes pencilPoint {
+  from, to {
+    transform: rotate(-90deg) translate(49px, -30px);
+  }
+  50% {
+    transform: rotate(-225deg) translate(49px, -30px);
+  }
+}
+@keyframes pencilRotate {
+  from {
+    transform: translate(100px, 100px) rotate(0);
+  }
+  to {
+    transform: translate(100px, 100px) rotate(720deg);
+  }
+}
+@keyframes pencilStroke {
+  from {
+    stroke-dashoffset: 439.82;
+    transform: translate(100px, 100px) rotate(-113deg);
+  }
+  50% {
+    stroke-dashoffset: 164.93;
+    transform: translate(100px, 100px) rotate(-113deg);
+  }
+  75%, to {
+    stroke-dashoffset: 439.82;
+    transform: translate(100px, 100px) rotate(112deg);
+  }
+}
 .labelBox {
   position: absolute;
   top: -9px;
@@ -984,4 +1175,255 @@ main .text-notic {
   .img-detils-width {
     width: 95% !important;
   }
+}
+.box-icon {
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-user,
+.btn-brand {
+  background: rgba(0, 105, 93, 0.2470588235);
+  border: 2px solid rgba(0, 105, 93, 0.5058823529) !important;
+  cursor: pointer;
+  z-index: 1;
+}
+.box-user:hover,
+.btn-brand:hover {
+  background: rgba(0, 105, 93, 0.3607843137) !important;
+  transition: all 1s;
+}
+
+.box-circle {
+  background: #00695C;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  color: #fff;
+  position: absolute;
+  left: -3px;
+  top: -18px;
+}
+
+@media screen and (min-width: 768px) {
+  .show-menu {
+    width: auto !important;
+  }
+}
+.show-menu2 {
+  position: fixed;
+  height: 100vh;
+  z-index: 10;
+  right: 0px;
+  top: 0px;
+  background: #fff;
+  width: 0px;
+}
+.show-menu2 div {
+  display: flex !important;
+}
+.show-menu2 li.row {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(39, 39, 39, 0.1803921569);
+}
+.show-menu2 .nav-item a:hover {
+  color: #00695C !important;
+}
+
+.fother-nav2 {
+  position: fixed;
+  inset: 0;
+  width: 0px;
+  background: rgba(0, 0, 0, 0.337254902);
+  z-index: 5;
+}
+
+@media screen and (max-width: 768px) {
+  .show-menu {
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    z-index: 10;
+    right: 0px;
+    top: 0px;
+    width: 0px;
+    background: #212529;
+  }
+  .show-menu div {
+    display: flex !important;
+  }
+  .show-menu li {
+    padding: 5px 10px;
+  }
+  .show-menu .nav-item a {
+    color: #fff;
+  }
+  .show-menu .nav-item a:hover {
+    color: #00695C !important;
+  }
+  .show-menu .active,
+  .show-menu .nav-item {
+    color: #fff !important;
+  }
+  .fother-nav {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.337254902);
+    z-index: 5;
+    width: 0px;
+  }
+  .no-center-align {
+    align-items: start !important;
+  }
+}
+.content-banner h1 {
+  color: #00695C;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+.content-banner p {
+  color: #766671;
+  font-size: 1.3rem;
+}
+
+.mt-9 {
+  margin-top: 60px;
+}
+
+.number-box .number-box-number {
+  color: #00695C;
+  font-size: 2rem;
+}
+.number-box .number-box-text {
+  color: #766671;
+  font-size: 1rem;
+}
+
+.circle-img-left {
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+}
+
+.circle-img-right {
+  position: absolute;
+  bottom: 30%;
+  right: 0;
+}
+
+.req-img-bottom {
+  position: absolute;
+  bottom: 30%;
+  left: -20px;
+  z-index: 2;
+}
+
+.img-full {
+  width: 100%;
+  height: 100vh;
+}
+
+.full-box-absolote {
+  position: absolute;
+  inset: 0px;
+}
+
+.relative {
+  position: relative;
+}
+
+.hv-100 {
+  height: 100vh;
+}
+
+.bg-banner {
+  background: #F6F6F6;
+}
+
+.resize-banner-box {
+  height: 100vh;
+}
+
+@media (min-width: 1500px) {
+  .resize-banner-box {
+    padding: 20px 0;
+    height: auto;
+  }
+}
+@media (max-width: 992.98px) {
+  .resize-banner-box {
+    height: auto;
+  }
+  .content-banner h1 {
+    font-size: 1.6rem !important;
+    margin-bottom: 25px;
+  }
+  .content-banner p {
+    font-size: 0.8rem !important;
+  }
+  .mt-9 {
+    margin-top: 30px;
+  }
+  .number-box .number-box-number {
+    font-size: 1.5rem;
+  }
+  .number-box .number-box-text {
+    font-size: 0.7rem;
+  }
+  .img-margin-lg-top {
+    margin-top: 15px;
+  }
+}
+.tizho-heading h2 {
+  text-align: center;
+  color: #000;
+  font-size: 1.9rem;
+}
+.tizho-heading h2 span {
+  color: #00695C;
+}
+.tizho-heading .color-green {
+  color: #EDEDED;
+}
+
+.desctiption {
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 2.5rem;
+  color: #766671;
+}
+
+@media (max-width: 992px) {
+  .tizho-heading h2 {
+    font-size: 1.5rem;
+  }
+}
+.box-tizho-how {
+  text-align: center;
+}
+.box-tizho-how img {
+  margin-bottom: 2.2rem !important;
+}
+.box-tizho-how h3 {
+  font-size: 1.1rem;
+  color: #00695C;
+  margin-bottom: 1.9rem;
+  line-height: 1.6rem;
+}
+.box-tizho-how p {
+  font-size: 0.8rem;
+  color: #766671;
+}
+
+.shadow-box, .card {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.section-title-spectoal {
+  background: #00695C;
+  padding: 0.5rem 2rem;
 }/*# sourceMappingURL=index.css.map */

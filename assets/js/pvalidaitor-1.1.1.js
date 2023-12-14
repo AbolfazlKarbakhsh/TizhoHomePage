@@ -340,6 +340,26 @@ class PValidator {
         tag.classList.toggle(Class1)
         tag.classList.toggle(Class2)
     }
+
+    Counter = (id) => {
+        $(id).each(function () {
+            $(this)
+              .prop("Counter", 0)
+              .animate(
+                {
+                  Counter: $(this).text(),
+                },
+                {
+                  duration: 2000,
+                  easing: "swing",
+                  step: function (now) {
+                    now = Number(Math.ceil(now)).toLocaleString('en');
+                                          $(this).text(now);
+                  },
+                }
+              );
+          });
+    }
 }
 
 

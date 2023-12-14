@@ -3,6 +3,13 @@
     justify-content: space-between;
 }
 
+@mixin Flex_center () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 @mixin hoverBtn (){
     background-color: $boxColor;
     color: $dark !important;

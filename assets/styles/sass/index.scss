@@ -4,6 +4,7 @@
 @import "./tabel.scss";
 @import "./fonts.scss";
 @import "./animation.scss";
+@import "./swiper";
 @import "grid";
 
 // variable color
@@ -20,35 +21,17 @@ $ColorText:#766671;
 $borderFocus:#b2b2b2;
 $white:#fff;
 
+$prim_color:#216d66;
+$sec_color:#FFD059;
+$sidebar: #1c334e;
+$side-titr: #112134;
+$main: #E8F2FC;
+$green-dark-opa:#00695d3f;
+$green-dark-opa-hover:#00695d5c;
+$green-dark-border:#00695d81;
+$green-dark:#00695C;
+$green-light:#04b19d;
 
-@mixin Flex () {
-    display: flex;
-    justify-content: space-between;
-}
-
-@mixin hoverBtn () {
-    background-color: $boxColor;
-    color: $dark !important;
-    border: 1px solid rgba($color: #000000, $alpha: .1);
-}
-
-@mixin BoxShadow () {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px !important;
-}
-
-
-@mixin borderRight ($value) {
-    border-right: 2px solid $value;
-
-}
-
-@mixin Border-no-left ($value) {
-    border-right: 1px solid $value !important;
-    border-bottom: 1px solid $value !important;
-    border-top: 1px solid $value !important;
-
-
-}
 
 
 // *************************************
@@ -66,7 +49,8 @@ $white:#fff;
 // } 
 
 body {
-    background: $bodyColor;
+    background: #fff;
+    overflow-x: hidden;
 }
 
 body.lightG1 {
@@ -84,7 +68,10 @@ a {
     }
 }
 
-
+.overflow-y {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
 input::placeholder {
     color: #cecccc;
@@ -105,12 +92,12 @@ button:active button:focus-visible,
 
 
 .bBrand {
-    background-color: $BrandBook;
+    background-color: $green-dark;
     transition: all .3s;
 
-    &:hover {
-        @include hoverBtn();
-    }
+    // &:hover {
+    //     @include hoverBtn();
+    // }
 }
 
 .bBlue {
@@ -132,6 +119,18 @@ button:active button:focus-visible,
 
 hr:not([size]) {
     height: .8px;
+}
+
+.text-brand {
+    color: $green-dark;
+}
+
+.text-sec {
+    color: $green-dark;
+}
+
+.flex-center {
+    @include Flex_center()
 }
 
 .z-index-h {
@@ -197,10 +196,13 @@ hr:not([size]) {
 }
 
 
-.text-dark-in *{
-    color: #000000 ;
+.text-dark-in * {
+    color: #000000;
 }
-.w-line , .w-line2 , .w-line3{
+
+.w-line,
+.w-line2,
+.w-line3 {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -232,6 +234,7 @@ main {
 
     }
 }
+
 
 
 // *************************************
@@ -307,20 +310,213 @@ main {
 }
 
 
-//********************
-//? Payment
-//********************
 
-.border-unfx-Right {
-    @include borderRight($BrandBook);
+
+
+//******************
+//? Loader
+//******************
+.Loader-site {
+    height: 100vh;
+    background: $white;
+    position: fixed;
+    inset: 0px;
+    z-index: 20;
+    @include Flex_center()
 }
 
-.border-unfx-Right-1 {
-    @include borderRight($blueBrand);
+.pencil {
+    display: block;
+    width: 10em;
+    height: 10em;
+}
 
+.pencil__body1,
+.pencil__body2,
+.pencil__body3,
+.pencil__eraser,
+.pencil__eraser-skew,
+.pencil__point,
+.pencil__rotate,
+.pencil__stroke {
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.pencil__body1,
+.pencil__body2,
+.pencil__body3 {
+    transform: rotate(-90deg);
+}
+
+.pencil__body1 {
+    animation-name: pencilBody1;
+}
+
+.pencil__body2 {
+    animation-name: pencilBody2;
+}
+
+.pencil__body3 {
+    animation-name: pencilBody3;
+}
+
+.pencil__eraser {
+    animation-name: pencilEraser;
+    transform: rotate(-90deg) translate(49px, 0);
+}
+
+.pencil__eraser-skew {
+    animation-name: pencilEraserSkew;
+    animation-timing-function: ease-in-out;
+}
+
+.pencil__point {
+    animation-name: pencilPoint;
+    transform: rotate(-90deg) translate(49px, -30px);
+}
+
+.pencil__rotate {
+    animation-name: pencilRotate;
+}
+
+.pencil__stroke {
+    animation-name: pencilStroke;
+    transform: translate(100px, 100px) rotate(-113deg);
+}
+
+/* Animations */
+@keyframes pencilBody1 {
+
+    from,
+    to {
+        stroke-dashoffset: 351.86;
+        transform: rotate(-90deg);
+    }
+
+    50% {
+        stroke-dashoffset: 150.8;
+        /* 3/8 of diameter */
+        transform: rotate(-225deg);
+    }
+}
+
+@keyframes pencilBody2 {
+
+    from,
+    to {
+        stroke-dashoffset: 406.84;
+        transform: rotate(-90deg);
+    }
+
+    50% {
+        stroke-dashoffset: 174.36;
+        transform: rotate(-225deg);
+    }
 }
 
 
+@keyframes pencilBody3 {
+
+    from,
+    to {
+        stroke-dashoffset: 296.88;
+        transform: rotate(-90deg);
+    }
+
+    50% {
+        stroke-dashoffset: 127.23;
+        transform: rotate(-225deg);
+    }
+}
+
+@keyframes pencilEraser {
+
+    from,
+    to {
+        transform: rotate(-45deg) translate(49px, 0);
+    }
+
+    50% {
+        transform: rotate(0deg) translate(49px, 0);
+    }
+}
+
+@keyframes pencilEraserSkew {
+
+    from,
+    32.5%,
+    67.5%,
+    to {
+        transform: skewX(0);
+    }
+
+    35%,
+    65% {
+        transform: skewX(-4deg);
+    }
+
+    37.5%,
+    62.5% {
+        transform: skewX(8deg);
+    }
+
+    40%,
+    45%,
+    50%,
+    55%,
+    60% {
+        transform: skewX(-15deg);
+    }
+
+    42.5%,
+    47.5%,
+    52.5%,
+    57.5% {
+        transform: skewX(15deg);
+    }
+}
+
+@keyframes pencilPoint {
+
+    from,
+    to {
+        transform: rotate(-90deg) translate(49px, -30px);
+    }
+
+    50% {
+        transform: rotate(-225deg) translate(49px, -30px);
+    }
+}
+
+@keyframes pencilRotate {
+    from {
+        transform: translate(100px, 100px) rotate(0);
+    }
+
+    to {
+        transform: translate(100px, 100px) rotate(720deg);
+    }
+}
+
+@keyframes pencilStroke {
+    from {
+        stroke-dashoffset: 439.82;
+        transform: translate(100px, 100px) rotate(-113deg);
+    }
+
+    50% {
+        stroke-dashoffset: 164.93;
+        transform: translate(100px, 100px) rotate(-113deg);
+    }
+
+    75%,
+    to {
+        stroke-dashoffset: 439.82;
+        transform: translate(100px, 100px) rotate(112deg);
+    }
+}
 
 //******************
 //? Compnents styls
@@ -341,12 +537,346 @@ main {
 }
 
 
-.img-detils-width{
+.img-detils-width {
     width: auto !important;
 }
 
 @media (max-width:576px) {
-    .img-detils-width{
+    .img-detils-width {
         width: 95% !important;
     }
 }
+
+
+.box-icon {
+    transition: all .5s;
+    @include Flex_center();
+}
+
+.box-user,
+.btn-brand {
+    background: $green-dark-opa;
+    border: 2px solid $green-dark-border !important;
+    cursor: pointer;
+
+    &:hover {
+        background: $green-dark-opa-hover !important;
+        transition: all 1s;
+
+    }
+
+    z-index: 1;
+
+}
+
+
+.box-circle {
+    background: $green-dark;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: .7rem;
+    color: #fff;
+    position: absolute;
+    left: -3px;
+    top: -18px;
+
+}
+
+
+// mega menu 
+@media screen and (min-width:768px) {
+    .show-menu {
+        width: auto !important;
+    }
+}
+
+.show-menu2 {
+    position: fixed;
+    height: 100vh;
+    z-index: 10;
+    right: 0px;
+    top: 0px;
+    background: $white;
+    width: 0px;
+
+    div {
+        display: flex !important;
+    }
+
+    li.row {
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #2727272e;
+    }
+
+    .nav-item a {
+        &:hover {
+            color: $green-dark !important;
+        }
+    }
+
+}
+
+.fother-nav2 {
+    position: fixed;
+    inset: 0;
+    width: 0px;
+    background: #00000056;
+    z-index: 5;
+}
+
+@media screen and (max-width:768px) {
+    .show-menu {
+        position: fixed;
+        width: 300px;
+        height: 100vh;
+        z-index: 10;
+        right: 0px;
+        top: 0px;
+        width: 0px;
+        background: #212529;
+
+        div {
+            display: flex !important;
+        }
+
+        li {
+            padding: 5px 10px;
+        }
+
+        .nav-item a {
+            color: $white;
+
+            &:hover {
+                color: $green-dark !important;
+            }
+        }
+
+        .active,
+        .nav-item {
+            color: $white !important;
+        }
+
+    }
+
+    .fother-nav {
+        position: fixed;
+        inset: 0;
+        background: #00000056;
+        z-index: 5;
+        width: 0px;
+    }
+
+    .no-center-align {
+        align-items: start !important;
+    }
+
+}
+
+
+
+//******************
+//? Banner
+//******************
+.content-banner {
+    h1 {
+        color: $green-dark;
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+
+    p {
+        color: $ColorText;
+        font-size: 1.3rem;
+    }
+}
+
+.mt-9 {
+    margin-top: 60px;
+}
+
+.number-box {
+    .number-box-number {
+        color: $green-dark;
+        font-size: 2rem;
+    }
+
+    .number-box-text {
+        color: $ColorText;
+        font-size: 1rem;
+    }
+}
+
+// circle 
+.circle-img-left {
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+}
+
+.circle-img-right {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+}
+
+.req-img-bottom {
+    position: absolute;
+    bottom: 30%;
+    left: -20px;
+    z-index: 2;
+}
+
+.img-full {
+    width: 100%;
+    height: 100vh;
+}
+
+.full-box-absolote {
+    position: absolute;
+    inset: 0px;
+}
+
+.relative {
+    position: relative;
+}
+
+.hv-100 {
+    height: 100vh;
+}
+
+.bg-banner {
+    // background-image: url('../../images/backgrounds/bg-sec-home.jpg');
+    background: #F6F6F6;
+}
+
+
+.resize-banner-box {
+    height: 100vh;
+}
+
+@media (min-width:1500px) {
+    .resize-banner-box {
+        padding: 20px 0;
+        height: auto;
+    }
+}
+
+@media (max-width:992.98px) {
+
+
+    .resize-banner-box {
+        height: auto;
+    }
+
+
+    .content-banner {
+        h1 {
+            font-size: 1.6rem !important;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: .8rem !important;
+        }
+    }
+
+    .mt-9 {
+        margin-top: 30px;
+    }
+
+    .number-box {
+        .number-box-number {
+            font-size: 1.5rem;
+        }
+
+        .number-box-text {
+            font-size: .7rem;
+        }
+    }
+
+    .img-margin-lg-top {
+        margin-top: 15px;
+    }
+
+}
+
+
+//******************
+//? How Tizho
+//******************
+
+.tizho-how {}
+
+.tizho-heading {
+    h2 {
+        text-align: center;
+        color: #000 ;
+        font-size: 1.9rem;
+
+        span {
+            color: $green-dark;
+        }
+    }
+
+    .color-green{
+        color: $boxColor;
+    }
+}
+
+.desctiption {
+    text-align: center;
+    font-size: .9rem;
+    line-height: 2.5rem;
+    color: $ColorText;
+}
+
+@media (max-width:992px) {
+    .tizho-heading {
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.box-tizho-how {
+    text-align: center;
+  
+    img {
+        margin-bottom: 2.2rem !important;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        color: $green-dark;
+        margin-bottom: 1.9rem;
+        line-height: 1.6rem;
+
+    }
+
+    p {
+        font-size: .8rem;
+        color: $ColorText;
+    }
+}
+
+.shadow-box {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+   
+}
+
+.card{
+    @extend .shadow-box;
+}
+
+
+// poly gone 
+.section-title-spectoal {
+    background: $green-dark;
+    padding: 0.5rem 2rem;
+    // clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  }
+
+
+  
