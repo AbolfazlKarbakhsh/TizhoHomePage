@@ -48,6 +48,10 @@ $green-light:#04b19d;
 //     box-shadow: none !important;
 // } 
 
+.sh {
+    @include BoxShadow();
+}
+
 body {
     background: #fff;
     overflow-x: hidden;

@@ -868,6 +868,10 @@ button {
   color: #fff;
 }
 
+.sh {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px !important;
+}
+
 body {
   background: #fff;
   overflow-x: hidden;
