@@ -1,19 +1,71 @@
+@import "./vars";
+
 swiper-container {
-    width: 100%;
-    height: 350px !important;
+  width: 100%;
+  // height: a !important;
 
+}
+
+//  products 
+.discount {
+  background: red;
+  color: #fff;
+  position: absolute;
+  padding: 2px 10px;
+  border-radius: 0px 10px 10px 0px;
+  font-size: .8rem;
+  left: 0px;
+  top: 10px;
+  box-shadow: 0px 0px 5px lightyellow;
+
+}
+
+// poly gone 
+.section-title-spectoal {
+  background: $green-dark;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  // clip-path: polygon(0 16%, 100% 0, 100% 85%, 0 100%);
+
+  swiper-container {
+    // transform: rotate(-2.5deg);
   }
+}
 
-  swiper-slide {
+@media (max-width:768px) {
+  .section-title-spectoal {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem;
+    clip-path: none !important;
 
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    height: 320px !important;
-    width: 320px !important;
+    swiper-container {
+      transform: rotate(0deg) !important;
+    }
   }
+}
 
-  .swiper{
-    height: 800px !important;
-    width: 100%;
+
+
+// az zaban shoma 
+.dec-300-over {
+  height: 110px;
+  line-height: 1.4rem;
+  // overflow-y: scroll;
+}
+
+
+/* تعیین مقدار برای ابعاد کوچکتر از 768px */
+@media (max-width: 768px) {
+  .swiper-container.d-lg-flex {
+    space-between: 15px; /* مقدار مورد نظر برای ابعاد کوچکتر */
+    slides-per-view: 2.2; /* مقدار مورد نظر برای ابعاد کوچکتر */
   }
+}
+
+/* تعیین مقدار برای ابعاد کوچکتر از 576px */
+@media (max-width: 576px) {
+  .swiper-container.d-sm-flex {
+    space-between: 10px; /* مقدار مورد نظر برای ابعاد کوچکتر */
+    slides-per-view: 1.3; /* مقدار مورد نظر برای ابعاد کوچکتر */
+  }
+}

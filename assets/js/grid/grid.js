@@ -1,13 +1,12 @@
 import PValidator from "../pvalidaitor-1.1.1.js";
 
 
+
 $(document).ready(function () {
-
-
-    // connscts class 
+    // connect lib 
     const Validaitr = new PValidator;
 
-    // Loder Site 
+    // Loader Site 
     setInterval(() => {
         $('#preLoader').addClass('d-none')
 
@@ -16,16 +15,6 @@ $(document).ready(function () {
     // counter number banner 
     Validaitr.Counter('.count')
 
-   
-
-    // cancel payment 
-    $("#Cancel-pay-btn").click(() => {
-        const Description = Validaitr.SelectBox("#SelectRed", "#SelectRedSpan")
-        console.log(Description);
-        if (Description) {
-            $("#Cancel-pay").submit();
-        }
-    })
 
 
 
@@ -108,4 +97,18 @@ $(document).ready(function () {
         }
 
     }
+
+
+
+    //******************************
+    //??        Cart
+    //******************************
+
+   
+
+    //******************************
+    //??        end cart 
+    //******************************
 });
+
+

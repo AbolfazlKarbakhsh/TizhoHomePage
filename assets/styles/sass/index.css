@@ -226,6 +226,10 @@ body {
     transform: scale(0.8);
   }
 }
+.fadeInAs {
+  animation: bounceOut 1s ease-in;
+}
+
 @keyframes bounceOut {
   0% {
     transform: scale(0.8);
@@ -249,36 +253,72 @@ body {
   }
 }
 /* table animation  */
-.transition {
-  animation-name: slide-down;
-  animation-duration: 1s;
+.Ychange {
+  animation: Ystate 4s infinite;
 }
 
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+@keyframes Ystate {
+  0% {
+    transform: translateY(10px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }
 swiper-container {
   width: 100%;
-  height: 350px !important;
 }
 
-swiper-slide {
-  height: 320px !important;
-  width: 320px !important;
+.discount {
+  background: red;
+  color: #fff;
+  position: absolute;
+  padding: 2px 10px;
+  border-radius: 0px 10px 10px 0px;
+  font-size: 0.8rem;
+  left: 0px;
+  top: 10px;
+  box-shadow: 0px 0px 5px lightyellow;
 }
 
-.swiper {
-  height: 800px !important;
-  width: 100%;
+.section-title-spectoal {
+  background: #00695C;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+  .section-title-spectoal {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem;
+    -webkit-clip-path: none !important;
+            clip-path: none !important;
+  }
+  .section-title-spectoal swiper-container {
+    transform: rotate(0deg) !important;
+  }
+}
+.dec-300-over {
+  height: 110px;
+  line-height: 1.4rem;
 }
 
+/* تعیین مقدار برای ابعاد کوچکتر از 768px */
+@media (max-width: 768px) {
+  .swiper-container.d-lg-flex {
+    space-between: 15px; /* مقدار مورد نظر برای ابعاد کوچکتر */
+    slides-per-view: 2.2; /* مقدار مورد نظر برای ابعاد کوچکتر */
+  }
+}
+/* تعیین مقدار برای ابعاد کوچکتر از 576px */
+@media (max-width: 576px) {
+  .swiper-container.d-sm-flex {
+    space-between: 10px; /* مقدار مورد نظر برای ابعاد کوچکتر */
+    slides-per-view: 1.3; /* مقدار مورد نظر برای ابعاد کوچکتر */
+  }
+}
 .header {
   right: 0;
   width: 100%;
@@ -762,6 +802,72 @@ button {
   stroke-width: 6;
 }
 
+.tizho-footer-bg {
+  background: #1C343C;
+  height: auto;
+}
+.tizho-footer-bg p {
+  color: #F7F8F8;
+}
+
+.tizho-footer-moj {
+  width: 100%;
+  height: 52px;
+}
+.tizho-footer-moj svg path {
+  fill: #72C7A8;
+}
+
+@media (max-width: 912px) {
+  .tizho-footer-moj {
+    height: 45px;
+  }
+}
+.access-li {
+  color: #fff;
+  padding-top: 0.8rem;
+}
+.access-li li {
+  line-height: 1.5rem;
+  list-style: none;
+  list-style-position: outside;
+}
+.access-li li:hover i, .access-li li:hover p, .access-li li:hover {
+  color: #72C7A8;
+  transition: all 0.2s ease-in;
+}
+.access-li li i {
+  font-size: 0.6rem;
+}
+
+.access-li-icons {
+  list-style-type: none;
+}
+.access-li-icons li svg {
+  fill: #72C7A8;
+  margin-top: 1rem;
+  margin-left: 0.7rem;
+  padding-right: 0;
+  margin-left: 0;
+  padding: 0.5rem;
+  transition: all 0.4s ease-in;
+}
+.access-li-icons li svg:hover {
+  background: rgba(255, 255, 255, 0.1450980392);
+  border-radius: 30%;
+}
+.access-li-icons li .sotial {
+  width: 60px !important;
+}
+.access-li-icons li .eita {
+  fill: #72C7A8;
+  width: 50px !important;
+}
+
+.white-hr * {
+  color: #fff;
+}
+
 body {
   background: #fff;
   overflow-x: hidden;
@@ -818,12 +924,20 @@ button:active button:focus-visible,
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.cb-text {
+  color: #00695C;
+}
+
 .shake {
   animation: shake 1.5s;
 }
 
 .Star {
   color: #dc3545 !important;
+}
+
+.text-jusifuy {
+  text-align: justify;
 }
 
 hr:not([size]) {
@@ -914,6 +1028,10 @@ hr:not([size]) {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 main .text-notic {
@@ -1276,6 +1394,9 @@ main .text-notic {
     z-index: 5;
     width: 0px;
   }
+  .nav-mobile {
+    width: 0px !important;
+  }
   .no-center-align {
     align-items: start !important;
   }
@@ -1354,6 +1475,11 @@ main .text-notic {
     height: auto;
   }
 }
+@media (max-height: 450px) {
+  .resize-banner-box {
+    height: auto;
+  }
+}
 @media (max-width: 992.98px) {
   .resize-banner-box {
     height: auto;
@@ -1379,7 +1505,7 @@ main .text-notic {
   }
 }
 .tizho-heading h2 {
-  text-align: center;
+  text-align: right;
   color: #000;
   font-size: 1.9rem;
 }
@@ -1404,6 +1530,7 @@ main .text-notic {
 }
 .box-tizho-how {
   text-align: center;
+  overflow-y: auto;
 }
 .box-tizho-how img {
   margin-bottom: 2.2rem !important;
@@ -1411,7 +1538,7 @@ main .text-notic {
 .box-tizho-how h3 {
   font-size: 1.1rem;
   color: #00695C;
-  margin-bottom: 1.9rem;
+  margin-bottom: 0.9rem;
   line-height: 1.6rem;
 }
 .box-tizho-how p {
@@ -1423,7 +1550,39 @@ main .text-notic {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.section-title-spectoal {
-  background: #00695C;
-  padding: 0.5rem 2rem;
+.box-tizho-about {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px !important;
+  padding: 0.5rem;
+}
+
+.description-box {
+  padding-left: 2rem;
+  line-height: 2.1rem;
+}
+.description-box h4 {
+  margin-bottom: 1.4rem;
+}
+.description-box p {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 912px) {
+  .box-tizho-about {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px !important;
+    padding: 0.5rem;
+    width: 80px;
+    position: absolute;
+    top: -25px;
+    left: 0px;
+  }
+  .description-box {
+    padding-left: 0rem;
+    margin-top: 1.2rem;
+  }
+}
+.user-box {
+  font-size: 3rem;
+  color: #cecccc;
 }/*# sourceMappingURL=index.css.map */

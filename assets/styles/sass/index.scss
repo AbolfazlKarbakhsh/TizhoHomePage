@@ -6,6 +6,7 @@
 @import "./animation.scss";
 @import "./swiper";
 @import "grid";
+@import "./footer";
 
 // variable color
 
@@ -31,7 +32,6 @@ $green-dark-opa-hover:#00695d5c;
 $green-dark-border:#00695d81;
 $green-dark:#00695C;
 $green-light:#04b19d;
-
 
 
 // *************************************
@@ -109,12 +109,19 @@ button:active button:focus-visible,
     }
 }
 
+.cb-text{
+    color: $green-dark;
+}
 .shake {
     animation: shake 1.5s;
 }
 
 .Star {
     color: #dc3545 !important;
+}
+
+.text-jusifuy{
+    text-align: justify;
 }
 
 hr:not([size]) {
@@ -124,6 +131,7 @@ hr:not([size]) {
 .text-brand {
     color: $green-dark;
 }
+
 
 .text-sec {
     color: $green-dark;
@@ -208,6 +216,9 @@ hr:not([size]) {
     justify-content: center;
 }
 
+.overflow-y-auto {
+    overflow-y: auto;
+}
 
 // *************************************
 //? deposit
@@ -668,6 +679,10 @@ main {
         width: 0px;
     }
 
+    .nav-mobile {
+        width: 0px !important;
+    }
+
     .no-center-align {
         align-items: start !important;
     }
@@ -763,6 +778,12 @@ main {
     }
 }
 
+@media (max-height:450px) {
+    .resize-banner-box {
+        height: auto;
+    }
+}
+
 @media (max-width:992.98px) {
 
 
@@ -811,8 +832,8 @@ main {
 
 .tizho-heading {
     h2 {
-        text-align: center;
-        color: #000 ;
+        text-align: right;
+        color: #000;
         font-size: 1.9rem;
 
         span {
@@ -820,7 +841,7 @@ main {
         }
     }
 
-    .color-green{
+    .color-green {
         color: $boxColor;
     }
 }
@@ -842,7 +863,7 @@ main {
 
 .box-tizho-how {
     text-align: center;
-  
+    overflow-y: auto;
     img {
         margin-bottom: 2.2rem !important;
     }
@@ -850,7 +871,7 @@ main {
     h3 {
         font-size: 1.1rem;
         color: $green-dark;
-        margin-bottom: 1.9rem;
+        margin-bottom: .9rem;
         line-height: 1.6rem;
 
     }
@@ -863,20 +884,54 @@ main {
 
 .shadow-box {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-   
+
 }
 
-.card{
+.card {
     @extend .shadow-box;
 }
 
 
-// poly gone 
-.section-title-spectoal {
-    background: $green-dark;
-    padding: 0.5rem 2rem;
-    // clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
-  }
+
+.box-tizho-about {
+    background: #fff;
+    @include BoxShadow();
+    padding: .5rem;
+}
+
+.description-box {
+    padding-left: 2rem;
+    line-height: 2.1rem;
 
 
-  
+    h4 {
+        margin-bottom: 1.4rem;
+    }
+
+    p {
+        font-size: .8rem;
+    }
+}
+
+@media (max-width:912px) {
+
+    .box-tizho-about {
+        background: #fff;
+        @include BoxShadow();
+        padding: .5rem;
+        width: 80px;
+        position: absolute;
+        top: -25px;
+        left: 0px;
+    }
+
+    .description-box {
+        padding-left: 0rem;
+        margin-top: 1.2rem;
+    }
+}
+
+.user-box{
+    font-size: 3rem;
+    color: #cecccc;
+}
