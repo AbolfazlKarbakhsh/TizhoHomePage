@@ -928,6 +928,12 @@ button:active button:focus-visible,
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.sticky-top-01 {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
 .cb-text {
   color: #00695C;
 }

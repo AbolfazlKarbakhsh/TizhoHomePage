@@ -113,9 +113,16 @@ button:active button:focus-visible,
     }
 }
 
-.cb-text{
+.sticky-top-01 {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.cb-text {
     color: $green-dark;
 }
+
 .shake {
     animation: shake 1.5s;
 }
@@ -124,7 +131,7 @@ button:active button:focus-visible,
     color: #dc3545 !important;
 }
 
-.text-jusifuy{
+.text-jusifuy {
     text-align: justify;
 }
 
@@ -222,6 +229,23 @@ hr:not([size]) {
 
 .overflow-y-auto {
     overflow-y: auto;
+}
+
+/* scrolls  */
+*::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+    border: 4px solid #fff;
+}
+*::-webkit-scrollbar {
+    width: 16px;
+  }
+
+*::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 5px solid #fff;
+    width: 2px !important;
 }
 
 // *************************************
@@ -868,6 +892,7 @@ main {
 .box-tizho-how {
     text-align: center;
     overflow-y: auto;
+
     img {
         margin-bottom: 2.2rem !important;
     }
@@ -935,7 +960,7 @@ main {
     }
 }
 
-.user-box{
+.user-box {
     font-size: 3rem;
     color: #cecccc;
 }
