@@ -1,0 +1,661 @@
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        تیزهو
+        |
+        سبد خرید
+    </title>
+    <meta name="description" content="تیزهو مرکز مشاوره تحصیلی تیز هوشان">
+
+    <!-- color page  -->
+    <meta name="theme-color" content="#216d66" />
+
+    <!-- bootstrap link  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- linked style ExportS sass  -->
+    <link rel="stylesheet" href="../assets/styles/sass/index.css">
+
+    <!-- fontAeosome Link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+        integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap icon  -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.2/font/bootstrap-icons.min.css"
+        integrity="sha512-D1liES3uvDpPrgk7vXR/hR/sukGn7EtDWEyvpdLsyalQYq6v6YUsTUJmku7B4rcuQ21rf0UTksw2i/2Pdjbd3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" href="../assets/images/logo/logo-white.png">
+
+
+
+</head>
+
+<body dir="rtl" class="transition">
+
+    <!--? Loader  -->
+    <div class="Loader-site" id="preLoader">
+        <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" class="pencil">
+            <defs>
+                <clipPath id="pencil-eraser">
+                    <rect height="30" width="30" ry="5" rx="5"></rect>
+                </clipPath>
+            </defs>
+            <circle transform="rotate(-113,100,100)" stroke-linecap="round" stroke-dashoffset="439.82"
+                stroke-dasharray="439.82 439.82" stroke-width="2" stroke="currentColor" fill="none" r="70"
+                class="pencil__stroke"></circle>
+            <g transform="translate(100,100)" class="pencil__rotate">
+                <g fill="none">
+                    <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12"
+                        stroke-width="30" stroke="hsl(223,90%,50%)" r="64" class="pencil__body1"></circle>
+                    <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96"
+                        stroke-width="10" stroke="hsl(223,90%,60%)" r="74" class="pencil__body2"></circle>
+                    <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29"
+                        stroke-width="10" stroke="hsl(223,90%,40%)" r="54" class="pencil__body3"></circle>
+                </g>
+                <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
+                    <g class="pencil__eraser-skew">
+                        <rect height="30" width="30" ry="5" rx="5" fill="hsl(223,90%,70%)"></rect>
+                        <rect clip-path="url(#pencil-eraser)" height="30" width="5" fill="hsl(223,90%,60%)"></rect>
+                        <rect height="20" width="30" fill="hsl(223,10%,90%)"></rect>
+                        <rect height="20" width="15" fill="hsl(223,10%,70%)"></rect>
+                        <rect height="20" width="5" fill="hsl(223,10%,80%)"></rect>
+                        <rect height="2" width="30" y="6" fill="hsla(223,10%,10%,0.2)"></rect>
+                        <rect height="2" width="30" y="13" fill="hsla(223,10%,10%,0.2)"></rect>
+                    </g>
+                </g>
+                <g transform="rotate(-90) translate(49,-30)" class="pencil__point">
+                    <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)"></polygon>
+                    <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)"></polygon>
+                    <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)"></polygon>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <header class="sticky-top-01 bg-white sh">
+        <div class="container d-flex py-0 justify-content-between align-items-center ">
+            <!--? logo  -->
+            <a class="flex-center" href="#">
+                <img src="../assets/images/logo/logoforsite.png" alt="" class="img-fluid" style="width: 65px;"
+                    alt="لوگو تیزهو">
+                <h1 class="m-2 font5 fsarbaz  text-brand "> <span class="d-none d-lg-inline"> </span>
+                    <span class=" font9 text-sec">تیزهو</span>
+                </h1>
+            </a>
+            <!--? fother navbar mobile dark -->
+            <div class="fother-nav  d-md-none" id="fother-nav"></div>
+            <!--? navbar -->
+            <nav class="navbar no-center-align navbar-expand-md  show-menu overflow-y-auto d-md-flex " id="navbar">
+                <div class="navbar-nav pt-3 h-100 justify-content-between">
+
+                    <div class="d-flex flex-column flex-md-row">
+
+                        <!-- show mobile  -->
+                        <li class="d-flex  d-md-none mb-5 ">
+                            <img src="../assets/images/logo/logo-white.png" alt="" class="img-fluid"
+                                style="width: 45px;" alt="لوگو تیزهو">
+                            <h1 class="m-2 font5 fsarbaz  text-brand "> <span class="">
+                                </span> <span class=" font9 text-sec " style="color:04b19d;">تیزهو</span>
+                            </h1>
+                        </li>
+
+                        <li class="nav-item mx-1">
+                            <a href="./index.html" class="nav-link  font3">خانه</a>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <a href="./azmon-ha.html" class="nav-link font3 active">آزمون ها</a>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <a href="#" class="nav-link font3">تماس با ما</a>
+                        </li>
+                        <li class="nav-item mx-1 mb-3">
+                            <a href="#about_us" class="nav-link font3">درباره ما</a>
+                        </li>
+                    </div>
+
+                    <!-- show mobile -->
+                    <li class="nav-item mx-1 flex-center d-md-none ">
+                        <p class="font2 p-2 rounded-1 box-user flex-center" style="width: 150px;margin-right: 70px;">
+                            <i class="bi bi-person   p-1 rounded-1 font6 "></i>
+                            مدیریت حساب
+                        </p>
+                    </li>
+                </div>
+            </nav>
+            <!--? icons -->
+            <div class="flex-center">
+                <!-- cart  -->
+                <div class="m-0 position-relative" id="btncart">
+                    <i class="bi bi-cart3 box-user   p-1 rounded-1 font7 "></i>
+                    <span class="box-circle flex-center" id="Resualt_Cart_Number">0</span>
+                </div>
+                <!-- spacer  -->
+                <div class="mx-1"></div>
+
+                <!-- auth  -->
+                <div class="m-0 d-none d-md-block">
+                    <p class="font2 p-2 rounded-1 box-user flex-center" style="margin-top: 13px;">
+                        ورود یا ثبت نام
+                        <i class="bi bi-person   p-1 rounded-1 font6 "></i>
+                    </p>
+                </div>
+                <!-- HUMBERGER Menu-->
+                <div class="m-0 d-block d-md-none ">
+                    <p class="font2 p-2 rounded-1 box-user flex-center" style="margin-top: 13px;" id="btnhumber">
+                        <i class="bi bi-list   p-1 rounded-1 font6"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="bg-product py-3">
+        <section class="py-2 py-md-5 container">
+            <div class="row">
+
+                <!-- detailes  heding -->
+                <div class="col-12 col-md-8">
+                    <div class="card no-shadow border-0">
+                        <div class="card-body p-4 product-detail">
+                            <h1 class="font4"> 
+                                
+                                سبد خرید شما 
+
+                            </h1>
+                            <hr>
+
+                            <!--? cart emty  -->
+                            <!-- <section>
+                                <div class="flex-center">
+                                    <img src="../assets/images/object/empty-cart.svg" alt="emty-cart" class="img-fluid">
+                                </div>
+                                <div class="flex-center">
+                                    <p>سبد خرید شما خالی است !</p>
+                                </div>
+                            </section> -->
+
+
+                            <!--? product cart  -->
+                            <ul class="d-flex flex-column" id="cart-box">
+                                <li class="row border my-2 p-3 ">
+                                    <div class="col-2">
+                                        <img src="../assets/./images/logo/Logo-green.png" class="img-fluid" alt=""
+                                            style="width: 40px;height: 40px;">
+                                    </div>
+                                    <div class="col-9 ">
+                                        <div class="d-flex flex-column">
+                                            <h5 class="font2" style="line-height: 1.3rem;"> پکیج آزمون ریاضی سال دهم
+                                            </h5>
+                                            <p class="font1">
+                                                <span>قیمت :</span>
+                                                <span>100،000</span>
+                                                <span>ریال</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-1">
+                                        <i class="bi bi-trash rounded-1 font6 text-brand"
+                                            onClick="remove_at_cart('${id}' , '${name}' , '${price}' , '${unicId}')"></i>
+                                    </div>
+                                </li>
+                                <li class="row border my-2 p-3">
+                                    <div class="col-2">
+                                        <img src="../assets/./images/logo/Logo-green.png" class="img-fluid" alt=""
+                                            style="width: 40px;height: 40px;">
+                                    </div>
+                                    <div class="col-9 ">
+                                        <div class="d-flex flex-column">
+                                            <h5 class="font2" style="line-height: 1.3rem;"> پکیج آزمون ریاضی سال دهم
+                                            </h5>
+                                            <p class="font1">
+                                                <span>قیمت :</span>
+                                                <span>100،000</span>
+                                                <span>ریال</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-1">
+                                        <i class="bi bi-trash rounded-1 font6 text-brand"
+                                            onClick="remove_at_cart('${id}' , '${name}' , '${price}' , '${unicId}')"></i>
+                                    </div>
+                                </li>
+                                <li class="row border my-2 p-3">
+                                    <div class="col-2">
+                                        <img src="../assets/./images/logo/Logo-green.png" class="img-fluid" alt=""
+                                            style="width: 40px;height: 40px;">
+                                    </div>
+                                    <div class="col-9 ">
+                                        <div class="d-flex flex-column">
+                                            <h5 class="font2" style="line-height: 1.3rem;"> پکیج آزمون ریاضی سال دهم
+                                            </h5>
+                                            <p class="font1">
+                                                <span>قیمت :</span>
+                                                <span>100،000</span>
+                                                <span>ریال</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-1">
+                                        <i class="bi bi-trash rounded-1 font6 text-brand"
+                                            onClick="remove_at_cart('${id}' , '${name}' , '${price}' , '${unicId}')"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- cart  price -->
+                <div class="col-12 col-md-4 mt-3 mt-md-0">
+                    <div class="card no-shadow border-0 p-2">
+                        <div class="card-body pt-0 ">
+                            <div class=" d-flex justify-content-between align-items-start product-heading-value ">
+                                <h6 class="text-muted font2 ">
+                                    قیمت کل
+                                    :
+                                </h6>
+                                <p class="font2 mx-2" style="color: #464646;">
+                                    <del>550،000</del> <span class="text-muted font1">ریال</span>
+                                </p>
+                            </div>
+
+                            <div class=" d-flex justify-content-between align-items-start product-heading-value ">
+                                <h6 class="text-muted font2 ">
+                                    قیمت کل با تخفیف
+                                    :
+                                </h6>
+                                <p class="font2 mx-2" style="color: #464646;">
+                                    <span>500،000</span> <span class="text-muted font1">ریال</span>
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!--? add product in cart  -->
+
+                        <div class="flex-center">
+                            <a href=""
+                                class="font1 p-2 rounded-1 w-50 m-3  box-user flex-center nav-link text-dark btn-add-to-cart2">
+                                ثبت سفارش
+                                <i class="bi bi-cart-check p-1 rounded-1 font4 "></i>
+                            </a>
+                        </div>
+
+                        <!--? free product  -->
+                        <!-- <section class="main-body-countainer-header text-center mb-2 ">
+                            <hr>
+                            <div class="d-flex justify-content-center ">
+                                <div class="position-relative w-line3">
+                                    <h5 class="font3 hr-Header "> رایگان  </h5>
+                                </div>
+                            </div>
+                        </section> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="tizho-footer-bg">
+
+        <section class="tizho-footer-moj">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none"
+                style="height: 100%;width:100%">
+                <path class="elementor-shape-fill"
+                    d="M283.5,9.7c0,0-7.3,4.3-14,4.6c-6.8,0.3-12.6,0-20.9-1.5c-11.3-2-33.1-10.1-44.7-5.7	s-12.1,4.6-18,7.4c-6.6,3.2-20,9.6-36.6,9.3C131.6,23.5,99.5,7.2,86.3,8c-1.4,0.1-6.6,0.8-10.5,2c-3.8,1.2-9.4,3.8-17,4.7	c-3.2,0.4-8.3,1.1-14.2,0.9c-1.5-0.1-6.3-0.4-12-1.6c-5.7-1.2-11-3.1-15.8-3.7C6.5,9.2,0,10.8,0,10.8V0h283.5V9.7z M260.8,11.3	c-0.7-1-2-0.4-4.3-0.4c-2.3,0-6.1-1.2-5.8-1.1c0.3,0.1,3.1,1.5,6,1.9C259.7,12.2,261.4,12.3,260.8,11.3z M242.4,8.6	c0,0-2.4-0.2-5.6-0.9c-3.2-0.8-10.3-2.8-15.1-3.5c-8.2-1.1-15.8,0-15.1,0.1c0.8,0.1,9.6-0.6,17.6,1.1c3.3,0.7,9.3,2.2,12.4,2.7	C239.9,8.7,242.4,8.6,242.4,8.6z M185.2,8.5c1.7-0.7-13.3,4.7-18.5,6.1c-2.1,0.6-6.2,1.6-10,2c-3.9,0.4-8.9,0.4-8.8,0.5	c0,0.2,5.8,0.8,11.2,0c5.4-0.8,5.2-1.1,7.6-1.6C170.5,14.7,183.5,9.2,185.2,8.5z M199.1,6.9c0.2,0-0.8-0.4-4.8,1.1	c-4,1.5-6.7,3.5-6.9,3.7c-0.2,0.1,3.5-1.8,6.6-3C197,7.5,199,6.9,199.1,6.9z M283,6c-0.1,0.1-1.9,1.1-4.8,2.5s-6.9,2.8-6.7,2.7	c0.2,0,3.5-0.6,7.4-2.5C282.8,6.8,283.1,5.9,283,6z M31.3,11.6c0.1-0.2-1.9-0.2-4.5-1.2s-5.4-1.6-7.8-2C15,7.6,7.3,8.5,7.7,8.6	C8,8.7,15.9,8.3,20.2,9.3c2.2,0.5,2.4,0.5,5.7,1.6S31.2,11.9,31.3,11.6z M73,9.2c0.4-0.1,3.5-1.6,8.4-2.6c4.9-1.1,8.9-0.5,8.9-0.8	c0-0.3-1-0.9-6.2-0.3S72.6,9.3,73,9.2z M71.6,6.7C71.8,6.8,75,5.4,77.3,5c2.3-0.3,1.9-0.5,1.9-0.6c0-0.1-1.1-0.2-2.7,0.2	C74.8,5.1,71.4,6.6,71.6,6.7z M93.6,4.4c0.1,0.2,3.5,0.8,5.6,1.8c2.1,1,1.8,0.6,1.9,0.5c0.1-0.1-0.8-0.8-2.4-1.3	C97.1,4.8,93.5,4.2,93.6,4.4z M65.4,11.1c-0.1,0.3,0.3,0.5,1.9-0.2s2.6-1.3,2.2-1.2s-0.9,0.4-2.5,0.8C65.3,10.9,65.5,10.8,65.4,11.1	z M34.5,12.4c-0.2,0,2.1,0.8,3.3,0.9c1.2,0.1,2,0.1,2-0.2c0-0.3-0.1-0.5-1.6-0.4C36.6,12.8,34.7,12.4,34.5,12.4z M152.2,21.1	c-0.1,0.1-2.4-0.3-7.5-0.3c-5,0-13.6-2.4-17.2-3.5c-3.6-1.1,10,3.9,16.5,4.1C150.5,21.6,152.3,21,152.2,21.1z">
+                </path>
+                <path class="elementor-shape-fill"
+                    d="M269.6,18c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C267.7,18.8,269.7,18,269.6,18z">
+                </path>
+                <path class="elementor-shape-fill"
+                    d="M227.4,9.8c-0.2-0.1-4.5-1-9.5-1.2c-5-0.2-12.7,0.6-12.3,0.5c0.3-0.1,5.9-1.8,13.3-1.2	S227.6,9.9,227.4,9.8z">
+                </path>
+                <path class="elementor-shape-fill"
+                    d="M204.5,13.4c-0.1-0.1,2-1,3.2-1.1c1.2-0.1,2,0,2,0.3c0,0.3-0.1,0.5-1.6,0.4	C206.4,12.9,204.6,13.5,204.5,13.4z">
+                </path>
+                <path class="elementor-shape-fill"
+                    d="M201,10.6c0-0.1-4.4,1.2-6.3,2.2c-1.9,0.9-6.2,3.1-6.1,3.1c0.1,0.1,4.2-1.6,6.3-2.6	S201,10.7,201,10.6z">
+                </path>
+                <path class="elementor-shape-fill"
+                    d="M154.5,26.7c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C152.6,27.5,154.6,26.8,154.5,26.7z">
+                </path>
+                <path class="elementor-shape-fill"
+                    d="M41.9,19.3c0,0,1.2-0.3,2.9-0.1c1.7,0.2,5.8,0.9,8.2,0.7c4.2-0.4,7.4-2.7,7-2.6	c-0.4,0-4.3,2.2-8.6,1.9c-1.8-0.1-5.1-0.5-6.7-0.4S41.9,19.3,41.9,19.3z">
+                </path>
+                <path class="elementor-shape-fill"
+                    d="M75.5,12.6c0.2,0.1,2-0.8,4.3-1.1c2.3-0.2,2.1-0.3,2.1-0.5c0-0.1-1.8-0.4-3.4,0	C76.9,11.5,75.3,12.5,75.5,12.6z">
+                </path>
+                <path class="elementor-shape-fill"
+                    d="M15.6,13.2c0-0.1,4.3,0,6.7,0.5c2.4,0.5,5,1.9,5,2c0,0.1-2.7-0.8-5.1-1.4	C19.9,13.7,15.7,13.3,15.6,13.2z">
+                </path>
+            </svg>
+        </section>
+
+        <section class="container">
+            <div class="pt-5 pb-2">
+                <!-- sec 1  -->
+                <div class="row">
+                    <div class="col-9 col-md-11">
+                        <h3 class="text-white font6">مرکز مشاوره تحصیلی تیزهو</h3>
+                        <p class="font2 pt-2 d-md-block d-none">با گشودن پنجره ایی پیش رویتان افق جدیدی را برای زندگی و
+                            تولید سرمایه در دنیای دیجیتال امروز پیدا کنید.</p>
+
+                    </div>
+                    <div class="col" style="margin-top: -40px;">
+                        <img src="../assets/images/logo/logo-white.png" alt="" class="img-fluid pt-0 mt-0">
+                    </div>
+                    <p class="font1 pt-3 d-md-none">با گشودن پنجره ایی پیش رویتان افق جدیدی را برای زندگی و تولید سرمایه
+                        در دنیای دیجیتال امروز پیدا کنید.</p>
+
+                </div>
+
+                <!-- sec 2 -->
+                <div class="row pt-4 pt-md-5">
+                    <!-- access fast -->
+                    <div class="col-12 col-md-3">
+                        <h3 class="text-white font4">دسترسی سریع</h3>
+                        <ul class="access-li px-0">
+                            <li>
+                                <a href="#" class="font2 nav-link">
+                                    <i class="bi bi-bullseye mx-1"></i>
+                                    آزمون ها
+                                </a>
+                            </li>
+                            <li><a href="#about_us" class="font2 nav-link"><i class="bi bi-bullseye mx-1"></i>درباره
+                                    تیزهو بیشتر
+                                    بدانید</a></li>
+                            <li><a href="#quiz" class="font2 nav-link"><i class="bi bi-bullseye mx-1"></i>سوالات
+                                    متداول</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="white-hr flex-center py-2 d-md-none">
+                        <div class="w-50">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <!-- tell us  -->
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white font4">راه های ارتباطی </h3>
+                        <ul class="access-li px-0 pt-2">
+                            <li class="font2 my-2 d-flex">
+                                <i class="bi bi-geo-alt-fill font2 mt-1  mx-1 "></i>
+                                <p>
+                                    آدرس پستی: &nbsp;
+                                    <br>
+                                    <span>
+                                        خیابان بهمنیار، کوچه ۴ (خیابان شهید لاری نجفی، کوچه ۵)، پلاک ۴۴، مرکز مشاوره
+                                        تیزهوشان
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li class="font2 my-2 d-flex">
+                                <i class="bi bi-phone font2 mt-1  mx-1 "></i>
+                                <p>
+                                    تلفن پشتیبانی : &nbsp;
+                                    <br>
+                                    <span>
+                                        ۰۳۴۳۲۴۴۴۷۷۱ &nbsp; &nbsp; - &nbsp; &nbsp;۰۳۴۳۲۴۴۴۷۷۲ &nbsp;&nbsp; - &nbsp;
+                                        &nbsp;۰۹۱۲۰۳۳۹۳۳۷
+                                    </span>
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="white-hr flex-center py-2 d-md-none">
+                        <div class="w-50">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <!-- soical media  -->
+                    <div class="col-12 col-md-3">
+                        <h3 class="text-white font4 text-center">شبکه های اجتماعی </h3>
+                        <ul class="access-li-icons px-0 d-flex justify-content-center">
+                            <li>
+                                <a href="https://instagram.com/tizhoo_insta?utm_source=qr
+                                " class="font2 nav-link" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        id="Layer_1" x="0px" y="0px" class="sotial" viewBox="0 0 226 183"
+                                        xml:space="preserve">
+                                        <image id="image0" x="0" y="0"
+                                            xlink:href="data:image/png;base64,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">
+                                        </image>
+                                    </svg>
+                                </a>
+
+
+                            </li>
+                            <li>
+                                <a href="https://t.me/Pishro_azmoon" class="font2 nav-link" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        id="Layer_1" x="0px" y="0px" class="sotial" viewBox="0 0 226 183"
+                                        xml:space="preserve">
+                                        <image id="image0" x="0" y="0"
+                                            xlink:href="data:image/png;base64,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">
+                                        </image>
+                                    </svg>
+                                </a>
+
+                            </li>
+
+                            <li>
+                                <a href="https://eitaa.com/Pishro_azmoon" class="font2 nav-link" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3584.55 3673.6" class="eita">
+                                        <g id="Isolation_Mode" data-name="Isolation Mode">
+                                            <path
+                                                d="M1071.43,2.75H2607.66C3171,2.75,3631.82,462.91,3631.82,1026.2v493.93c-505,227-1014.43,1348.12-1756.93,1104.51-61.16,43.46-202.11,222.55-212,358.43-257.11-34.24-553.52-328.88-517.95-646.62C717,2026.91,1070.39,1455.5,1409.74,1225.51c727.32-492.94,1737.05-69,1175.39,283.45-341.52,214.31-1071.84,355.88-995.91-170.24-200.34,57.78-328.58,431.34-87.37,626-223.45,219.53-180.49,623.07,58.36,755.57,241.56-625.87,1082.31-544.08,1422-1291.2,255.57-562-123.34-1202.37-880.91-1104C1529.56,399.34,993.64,881.63,725.62,1453.64,453.68,2034,494.15,2811.15,1052.55,3202.82c657.15,460.92,1356.78,34.13,1780.52-523.68,249.77-328.78,468-693,798.75-903.37v875.72c0,563.28-460.88,1024.86-1024.16,1024.86H1071.43c-563.29,0-1024.16-460.87-1024.16-1024.16V1026.9C47.27,463.61,508.14,2.74,1071.43,2.74Z"
+                                                transform="translate(-47.27 -2.74)" fill-rule="evenodd" />
+                                        </g>
+                                    </svg>
+
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- sec 3 -->
+                <div>
+                    <div class="white-hr">
+                        <hr>
+                    </div>
+                    <p class="text-center font2 pt-2">
+                        تمامی حقوق مادی و معنوی متعلق به © تیزهو می باشد.
+                    </p>
+
+                </div>
+            </div>
+
+        </section>
+
+    </footer>
+
+
+
+
+    <!--! jquery  -->
+    <script src="../../assets/js/jquery-3.5.1.min.js"></script>
+
+    <!--! bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+
+    <!--! swiper connect  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+
+    <!--! scrips  -->
+    <script src="../assets/js/grid/grid.js" type="module"></script>
+
+
+    <!--! script add to cart  -->
+    <script>
+        const _cart = $("#cart-box");
+        let _unicIds = [];
+        let _initailCartValue = []
+
+        const ManageEmtyeCart = () => {
+            $('#emtyCart').toggleClass('d-none');
+            $('#btnCar0').toggleClass('d-none')
+        }
+
+        const Add_To_Local = () => {
+            localStorage.setItem("cart", JSON.stringify(_initailCartValue));
+        }
+
+        const Add_cart_at_tag = (id, name, price, unicId) => {
+            let li_cart = `<li class="row uIdProduct${id}">
+                    <div class="col-2">
+                        <img src="../assets/./images/logo/Logo-green.png" class="img-fluid" alt="" style="width: 30px;height: 30px;">
+                    </div>
+                    <div class="col-8 ">
+                        <div class="d-flex flex-column" >
+                            <h5 class="font2" style="line-height: 1.3rem;"> ${name} </h5>
+                            <p class="font1">
+                                <span>قیمت :</span>
+                                ${price}
+                                <span>ریال</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <i class="bi bi-trash rounded-1 font6 text-brand" onClick="remove_at_cart('${id}' , '${name}' , '${price}' , '${unicId}')"></i>
+                    </div>
+                </li>`;
+
+            _cart[0].innerHTML += li_cart;
+        };
+
+        const Change_Text_Btn_Cart = (e, id) => {
+            let btnCart = e.target;
+            btnCart.tagName == 'A' ?
+                btnCart.outerHTML = `
+                <section class="main-body-countainer-header text-center mb-2 cartafter${id}">
+                            <hr>
+                            <div class="d-flex justify-content-center ">
+                                <div class="position-relative w-line3">
+                                    <h5 class="font3 hr-Header "> در سبد خرید  </h5>
+                                </div>
+                            </div>
+                        </section>
+            ` : btnCart.parentNode.outerHTML = ` <section class="main-body-countainer-header text-center mb-2 cartafter${id}">
+                            <hr>
+                            <div class="d-flex justify-content-center ">
+                                <div class="position-relative w-line3">
+                                    <h5 class="font3 hr-Header "> در سبد خرید  </h5>
+                                </div>
+                            </div>
+                        </section>`;
+
+        };
+
+        const remove_at_cart = (id, name, price, unicId) => {
+
+            // hide cart at web 
+            let HideOnWeb = `.uIdProduct${id}`;
+            $(HideOnWeb).addClass('d-none');
+
+            // remove on array 
+            _unicIds = _unicIds.filter(item => item != unicId);
+            _initailCartValue = _initailCartValue.filter(item => item.unicId != unicId)
+            Add_To_Local()
+            // add after btn 
+            let New_Btn_Add_To_Cart = `.cartafter${id}`
+            $(New_Btn_Add_To_Cart)[0].outerHTML = `
+            <a class="font1 p-2 w-50 rounded-1 box-user flex-center nav-link text-dark btn-add-to-cart${id}"
+                onclick="add_to_cart(event, '${id}' , '${name}' , '${price}' , '${unicId}')">
+                        افزودن به سبد خرید
+                <i class="bi bi-cart-plus p-1 rounded-1 font4 "></i>
+            </a>
+            `;
+
+            // refresh cart
+            Resualt_Cart_Number(_unicIds.length);
+        };
+
+        const Resualt_Cart_Number = (number) => {
+            $('#Resualt_Cart_Number')[0].innerHTML = number;
+            if (number == 0) {
+                ManageEmtyeCart()
+            }
+        };
+
+        const add_to_cart = (e, id, name, price, unicId, state = true) => {
+            const RepeatCart = _unicIds.includes(unicId);
+            if (!RepeatCart) {
+                // unic field 
+                _unicIds.push(unicId);
+
+                // local storage add
+                _initailCartValue.push({ id, name, price, unicId })
+                Add_To_Local()
+
+                Add_cart_at_tag(id, name, price, unicId);
+                if (state) {
+                    Change_Text_Btn_Cart(e, id);
+                }
+                Resualt_Cart_Number(_unicIds.length);
+            }
+            if (_initailCartValue.length != 0) {
+                $('#emtyCart').addClass('d-none');
+                $('#btnCar0').removeClass('d-none')
+            }
+        };
+
+        // manage local storage 
+
+        const Get_Values_At_Local = (() => {
+            // ?getStorage For Chack is null or Undifind
+            let storage = localStorage.getItem("cart");
+
+            if (storage === null || JSON.parse(storage)[0] == undefined) {
+                localStorage.setItem("cart", JSON.stringify(_initailCartValue));
+            } else {
+                ManageEmtyeCart()
+            }
+
+            // ?Re Set Storage When Null Or HasDatas
+            storage = localStorage.getItem("cart");
+
+            _initailCartValue = JSON.parse(storage);
+
+            _initailCartValue.forEach(item => {
+                let calssQ = `.btn-add-to-cart${item.id}`
+                if ($(calssQ)[0] != undefined) {
+                    $(calssQ)[0].outerHTML = `<a class="font1 cb-text fadeInAs btn  cartafter${item.id}"><span>در سبد خرید</span></a>`;
+                    add_to_cart(null, item.id, item.name, item.price, item.unicId, false)
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

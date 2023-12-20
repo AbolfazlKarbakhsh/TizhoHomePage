@@ -1,0 +1,41 @@
+$bg-product:#F6F6FD;
+$heading-product:#7e89a9;
+$heading-product-value:#777777;
+
+.bg-product {
+    background-color: $bg-product !important;
+}
+
+.no-shadow {
+    box-shadow: none !important;
+}
+
+.bg-none {
+    background-color: inherit !important;
+    border: 0px;
+}
+
+.product-heading-value {
+    margin-top: .4rem;
+    padding: 0;
+    align-items: center;
+
+    h6 {
+        color: $heading-product !important;
+        margin: 0;
+        margin-top: .5rem;
+
+    }
+
+    p {
+        color: $heading-product-value;
+        margin: 0;
+        margin-top: .5rem;
+
+    }
+}
+
+.free-course{
+    text-align: center;
+    
+}

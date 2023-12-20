@@ -750,7 +750,7 @@ button {
 
 @media (min-width: 991px) {
   .w-lg-75 {
-    width: 75% !important;
+    width: 50% !important;
   }
 }
 .menu {
@@ -868,6 +868,39 @@ button {
   color: #fff;
 }
 
+.bg-product {
+  background-color: #F6F6FD !important;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
+
+.bg-none {
+  background-color: inherit !important;
+  border: 0px;
+}
+
+.product-heading-value {
+  margin-top: 0.4rem;
+  padding: 0;
+  align-items: center;
+}
+.product-heading-value h6 {
+  color: #7e89a9 !important;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+.product-heading-value p {
+  color: #777777;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.free-course {
+  text-align: center;
+}
+
 .sh {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px !important;
 }
@@ -936,6 +969,14 @@ button:active button:focus-visible,
 
 .cb-text {
   color: #00695C;
+}
+
+.cb-text-link {
+  color: #00695C;
+  transition: all 0.3s;
+}
+.cb-text-link:hover {
+  color: #04b19d;
 }
 
 .shake {
@@ -1042,6 +1083,24 @@ hr:not([size]) {
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+/* scrolls  */
+*::-webkit-scrollbar {
+  background-color: #fff;
+  width: 16px;
+  border: 4px solid #fff;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 5px solid #fff;
+  width: 2px !important;
 }
 
 main .text-notic {

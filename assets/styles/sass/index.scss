@@ -7,6 +7,7 @@
 @import "./swiper";
 @import "grid";
 @import "./footer";
+@import "./Product";
 
 // variable color
 
@@ -121,6 +122,15 @@ button:active button:focus-visible,
 
 .cb-text {
     color: $green-dark;
+}
+
+.cb-text-link{
+    color: $green-dark;
+    transition: all .3s;
+    &:hover{
+        color: $green-light;
+
+    }
 }
 
 .shake {
