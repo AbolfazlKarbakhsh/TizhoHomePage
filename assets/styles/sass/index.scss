@@ -8,6 +8,7 @@
 @import "grid";
 @import "./footer";
 @import "./Product";
+@import "./userPanel";
 
 // variable color
 
@@ -16,10 +17,10 @@ $BrandBookHover:rgb(227, 224, 224);
 $dark:#000000;
 $LightGray:#FAFAFA;
 $BlightGray:#F1F1F1;
-$blueBrand:#0076FE;
+$blueBrand:#00695C;
 $bodyColor:#f5f5f5;
 $boxColor:#EDEDED;
-$ColorText:#766671;
+$ColorText:#00695C;
 $borderFocus:#b2b2b2;
 $white:#fff;
 
@@ -59,9 +60,7 @@ body {
 }
 
 body.lightG1 {
-    background: $bodyColor !important;
-    color: $ColorText;
-
+    @extend .pattern;
 }
 
 a {
@@ -121,13 +120,20 @@ button:active button:focus-visible,
 }
 
 .cb-text {
-    color: $green-dark;
+    color: $green-dark !important;
 }
 
-.cb-text-link{
+.datalist option {
+    background: #fff;
+    padding: .8rem;
+    color: #000;
+}
+
+.cb-text-link {
     color: $green-dark;
     transition: all .3s;
-    &:hover{
+
+    &:hover {
         color: $green-light;
 
     }
@@ -172,6 +178,12 @@ hr:not([size]) {
 
 .cBlue {
     color: $blueBrand;
+}
+
+.pattern {
+    width: 100%;
+    height: 100%;
+  background: url('../../images/banners/pattern.png') repeat #f3f7fa;
 }
 
 @media (max-width:543px) {
@@ -224,6 +236,10 @@ hr:not([size]) {
     cursor: pointer;
 }
 
+.bi-trash {
+    cursor: pointer;
+    color: $green-light !important;
+}
 
 .text-dark-in * {
     color: #000000;
@@ -247,9 +263,10 @@ hr:not([size]) {
     width: 16px;
     border: 4px solid #fff;
 }
+
 *::-webkit-scrollbar {
     width: 16px;
-  }
+}
 
 *::-webkit-scrollbar-thumb {
     background-color: #babac0;

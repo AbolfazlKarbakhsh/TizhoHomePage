@@ -96,7 +96,7 @@ $(document).ready(function () {
       $(".swiper-container-azmon").attr("slides-per-view", 2.3);
     } else if ($(window).width() < 1200) {
       $(".swiper-container-azmon").attr("slides-per-view", 3.3);
-    } else{
+    } else {
       $(".swiper-container-azmon").attr("slides-per-view", 4.3);
     }
   }
@@ -108,5 +108,11 @@ $(document).ready(function () {
 
   //******************************
   //??        end cart
-  //******************************
+  //******************************\
+
+
+  if ($('#end-cart')[0] != undefined) {
+    $('#btncart').addClass('d-none')
+  }
+
 });

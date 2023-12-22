@@ -163,10 +163,10 @@
         </div>
     </header>
 
-    <main>
-        <!--? azmon ha  slider-->
-        <section>
+    <main class="bg-product" id="maincartbox">
 
+        <!--? azmon ha slider-->
+        <section>
             <!--? heading  -->
             <div class="my-2 pt-4">
                 <div class="d-flex justify-content-center tizho-heading">
@@ -754,11 +754,11 @@
 
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="tizho-footer-bg">
@@ -994,12 +994,12 @@
     <!--! scrips  -->
     <script src="../assets/js/grid/grid.js" type="module"></script>
 
-
     <!--! script add to cart  -->
     <script>
         const _cart = $("#cart-box");
         let _unicIds = [];
         let _initailCartValue = []
+        let storageArray = []
 
         const ManageEmtyeCart = () => {
             $('#emtyCart').toggleClass('d-none');
@@ -1012,33 +1012,53 @@
 
         const Add_cart_at_tag = (id, name, price, unicId) => {
             let li_cart = `<li class="row uIdProduct${id}">
-                    <div class="col-2">
-                        <img src="../assets/./images/logo/Logo-green.png" class="img-fluid" alt="" style="width: 30px;height: 30px;">
-                    </div>
-                    <div class="col-8 ">
-                        <div class="d-flex flex-column" >
-                            <h5 class="font2" style="line-height: 1.3rem;"> ${name} </h5>
-                            <p class="font1">
-                                <span>قیمت :</span>
-                                ${price}
-                                <span>ریال</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <i class="bi bi-trash rounded-1 font6 text-brand" onClick="remove_at_cart('${id}' , '${name}' , '${price}' , '${unicId}')"></i>
-                    </div>
-                </li>`;
+            <div class="col-2">
+                <img src="../assets/./images/logo/Logo-green.png" class="img-fluid" alt="" style="width: 30px;height: 30px;">
+            </div>
+            <div class="col-8 ">
+                <div class="d-flex flex-column" >
+                    <h5 class="font2" style="line-height: 1.3rem;"> ${name} </h5>
+                    <p class="font1">
+                        <span>قیمت :</span>
+                        ${price}
+                        <span>ریال</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-1">
+                <i class="bi bi-trash rounded-1 font6 text-brand" onClick="remove_at_cart('${id}' , '${name}' , '${price}' , '${unicId}')"></i>
+            </div>
+        </li>`;
 
             _cart[0].innerHTML += li_cart;
         };
 
         const Change_Text_Btn_Cart = (e, id) => {
             let btnCart = e.target;
-            btnCart.tagName == 'A' ?
-                btnCart.outerHTML = `<a class="font1 cb-text fadeInAs cartafter${id}"><span>در سبد خرید</span></a>
-            ` : btnCart.parentNode.outerHTML = `<a class="font1 cb-text fadeInAs  cartafter${id}"><span>در سبد خرید</span></a>`;
-
+            if ($('#main-cart')[0] != undefined) {
+                btnCart.tagName == 'A' ?
+                    btnCart.outerHTML = `
+        <section class="main-body-countainer-header text-center mb-2 cartafter${id}">
+                    <hr>
+                    <div class="d-flex justify-content-center ">
+                        <div class="position-relative w-line3">
+                            <h5 class="font3 hr-Header "> در سبد خرید  </h5>
+                        </div>
+                    </div>
+                </section>
+    ` : btnCart.parentNode.outerHTML = ` <section class="main-body-countainer-header text-center mb-2 cartafter${id}">
+                    <hr>
+                    <div class="d-flex justify-content-center ">
+                        <div class="position-relative w-line3">
+                            <h5 class="font3 hr-Header "> در سبد خرید  </h5>
+                        </div>
+                    </div>
+                </section>`;
+            } if ($('#maincartbox')[0] != undefined) {
+                btnCart.tagName == 'A' ?
+                    btnCart.outerHTML = `<a class="font1 cb-text fadeInAs cartafter${id}"><span>در سبد خرید</span></a>
+` : btnCart.parentNode.outerHTML = `<a class="font1 cb-text fadeInAs  cartafter${id}"><span>در سبد خرید</span></a>`;
+            }
         };
 
         const remove_at_cart = (id, name, price, unicId) => {
@@ -1054,12 +1074,12 @@
             // add after btn 
             let New_Btn_Add_To_Cart = `.cartafter${id}`
             $(New_Btn_Add_To_Cart)[0].outerHTML = `
-            <a class="font1 p-2 rounded-1 box-user flex-center nav-link text-dark btn-add-to-cart${id}"
-                onclick="add_to_cart(event, '${id}' , '${name}' , '${price}' , '${unicId}')">
-                        افزودن
-                <i class="bi bi-cart-plus p-1 rounded-1 font4 "></i>
-            </a>
-            `;
+    <a class="font1 p-2 w-50 rounded-1 box-user flex-center nav-link text-dark btn-add-to-cart${id}"
+        onclick="add_to_cart(event, '${id}' , '${name}' , '${price}' , '${unicId}')">
+                افزودن به سبد خرید
+        <i class="bi bi-cart-plus p-1 rounded-1 font4 "></i>
+    </a>
+    `;
 
             // refresh cart
             Resualt_Cart_Number(_unicIds.length);
@@ -1074,13 +1094,23 @@
 
         const add_to_cart = (e, id, name, price, unicId, state = true) => {
             const RepeatCart = _unicIds.includes(unicId);
+            const initailCartValue = JSON.parse(localStorage.getItem("cart"));
+            let arr = []
+            arr = initailCartValue.filter((item) => {
+                return item.id == id
+            })
             if (!RepeatCart) {
+
+
                 // unic field 
                 _unicIds.push(unicId);
 
                 // local storage add
-                _initailCartValue.push({ id, name, price, unicId })
-                Add_To_Local()
+                if (arr[0] == undefined) {
+                    _initailCartValue.push({ id, name, price, unicId })
+                    Add_To_Local()
+                }
+
 
                 Add_cart_at_tag(id, name, price, unicId);
                 if (state) {
@@ -1092,6 +1122,8 @@
                 $('#emtyCart').addClass('d-none');
                 $('#btnCar0').removeClass('d-none')
             }
+
+
         };
 
         // manage local storage 
@@ -1110,15 +1142,28 @@
             storage = localStorage.getItem("cart");
 
             _initailCartValue = JSON.parse(storage);
+            storageArray = JSON.parse(storage);
 
             _initailCartValue.forEach(item => {
                 let calssQ = `.btn-add-to-cart${item.id}`
                 if ($(calssQ)[0] != undefined) {
-                    $(calssQ)[0].outerHTML = `<a class="font1 cb-text fadeInAs cartafter${item.id}"><span>در سبد خرید</span></a>`;
-                    add_to_cart(null, item.id, item.name, item.price, item.unicId, false)
+                    if ($('#main-cart')[0] != undefined) {
+                        $(calssQ)[0].outerHTML = `<section class="main-body-countainer-header text-center mb-2 cartafter${item.id}" >
+                    <hr>
+                        <div class="d-flex justify-content-center ">
+                            <div class="position-relative w-line3">
+                                <h5 class="font3 hr-Header "> در سبد خرید  </h5>
+                            </div>
+                        </div>
+                    </section>`;
+                    } else if ($('#maincartbox')[0] != undefined) {
+                        $(calssQ)[0].outerHTML = `<a class="font1 cb-text fadeInAs btn  cartafter${item.id}"><span>در سبد خرید</span></a>`;
+                    }
                 }
+                add_to_cart(null, item.id, item.name, item.price, item.unicId, false)
             });
         })();
+
     </script>
 </body>
 
