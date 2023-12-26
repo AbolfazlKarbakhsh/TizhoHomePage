@@ -530,19 +530,19 @@
 
     <!--! scrips  -->
     <script src="../assets/js/grid/grid.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-
-
-       <!--! script add to cart -->
-       <script>
+    <!--! script add to cart -->
+    <script>
         const _cart = $("#cart-box");
         let _unicIds = [];
         let _initialCartValue = [];
         let storageArray = [];
 
         const Add_To_Cookie = () => {
-            document.cookie = `cart=${JSON.stringify(_initialCartValue)}; path=/`;
+            $.cookie('cart', JSON.stringify(_initialCartValue), { expires: 2, path: "/", sameSite: "None" });
         }
+
 
         const Add_cart_at_tag = (id, name, price, unicId) => {
             let li_cart = `<li class="row uIdProduct${id}">
@@ -686,9 +686,7 @@
 
         // تابع جدید برای خواندن مقدار از کوکی
         const getCookie = (name) => {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
+            return $.cookie(name);
         };
 
 
