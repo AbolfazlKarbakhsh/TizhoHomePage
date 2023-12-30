@@ -221,7 +221,8 @@
                   <!-- <span class="font1 m-0 p-0 text-danger mb-2">نام وارد شده صحیح نمی باشد !</span> -->
                 </div>
                 <div class="col-12 col-md-6 my-1">
-                  <input type="text" id="city" class="formStyle formPlace " placeholder="شهر خود را جستجو کنید " name="city" list="cityList">
+                  <input type="text" id="city" class="formStyle formPlace " placeholder="شهر خود را جستجو کنید "
+                    name="city" list="cityList">
 
                   <!-- لیست پیشنهادی -->
                   <datalist id="cityList" class="datalist">
@@ -443,9 +444,23 @@
           <div class="white-hr">
             <hr>
           </div>
-          <p class="text-center font2 pt-2">
-            تمامی حقوق مادی و معنوی متعلق به © تیزهو می باشد.
-          </p>
+
+          <div class="d-flex justify-content-around">
+            <p class="text-center font2 pt-2">
+              تمامی حقوق مادی و معنوی متعلق به © تیزهو می باشد.
+            </p>
+
+            <div class="" style="width: 100px;height: auto;">
+              <a referrerpolicy='origin' target='_blank'
+                href='https://trustseal.enamad.ir/?id=178806&Code=FL7jv1FDnhMj5XvwD5NsqgsMxU9CfmfT'><img
+                  referrerpolicy='origin'
+                  src='https://trustseal.enamad.ir/logo.aspx?id=178806&Code=FL7jv1FDnhMj5XvwD5NsqgsMxU9CfmfT' alt=''
+                  style='cursor:pointer' Code='FL7jv1FDnhMj5XvwD5NsqgsMxU9CfmfT'></a>
+
+            </div>
+
+
+          </div>
 
         </div>
       </div>
@@ -453,6 +468,8 @@
     </section>
 
   </footer>
+
+
 
   <!--? cart shopping  -->
   <div>
@@ -508,18 +525,18 @@
 
   <!--! script add to cart -->
   <script>
-      const _cart = $("#cart-box");
-      let _unicIds = [];
-      let _initialCartValue = [];
-      let storageArray = [];
+    const _cart = $("#cart-box");
+    let _unicIds = [];
+    let _initialCartValue = [];
+    let storageArray = [];
 
-      const Add_To_Cookie = () => {
-          $.cookie('cart', JSON.stringify(_initialCartValue), { expires: 2, path: "/", sameSite: "None" });
-      }
+    const Add_To_Cookie = () => {
+      $.cookie('cart', JSON.stringify(_initialCartValue), { expires: 2, path: "/", sameSite: "None" });
+    }
 
 
-      const Add_cart_at_tag = (id, name, price, unicId) => {
-          let li_cart = `<li class="row uIdProduct${id}">
+    const Add_cart_at_tag = (id, name, price, unicId) => {
+      let li_cart = `<li class="row uIdProduct${id}">
                   <div class="col-2">
                       <img src="../../assets/./images/logo/Logo-green.png" class="img-fluid" alt="" style="width: 30px;height: 30px;">
                   </div>
@@ -538,14 +555,14 @@
                   </div>
               </li>`;
 
-          _cart[0].innerHTML += li_cart;
-      };
+      _cart[0].innerHTML += li_cart;
+    };
 
-      const Change_Text_Btn_Cart = (e, id) => {
-          let btnCart = e.target;
-          if ($('#main-cart')[0] != undefined) {
-              btnCart.tagName == 'A' ?
-                  btnCart.outerHTML = `
+    const Change_Text_Btn_Cart = (e, id) => {
+      let btnCart = e.target;
+      if ($('#main-cart')[0] != undefined) {
+        btnCart.tagName == 'A' ?
+          btnCart.outerHTML = `
               <section class="main-body-countainer-header text-center mb-2 cartafter${id}">
                           <hr>
                           <div class="d-flex justify-content-center ">
@@ -562,118 +579,118 @@
                               </div>
                           </div>
                       </section>`;
-          } if ($('#maincartbox')[0] != undefined) {
-              btnCart.tagName == 'A' ?
-                  btnCart.outerHTML = `<a class="font1 cb-text fadeInAs cartafter${id}"><span>در سبد خرید</span></a>
+      } if ($('#maincartbox')[0] != undefined) {
+        btnCart.tagName == 'A' ?
+          btnCart.outerHTML = `<a class="font1 cb-text fadeInAs cartafter${id}"><span>در سبد خرید</span></a>
       ` : btnCart.parentNode.outerHTML = `<a class="font1 cb-text fadeInAs  cartafter${id}"><span>در سبد خرید</span></a>`;
-          }
-      };
+      }
+    };
 
-      const remove_at_cart = (id, name, price, unicId) => {
+    const remove_at_cart = (id, name, price, unicId) => {
 
-          // hide cart at web
-          let HideOnWeb = `.uIdProduct${id}`;
-          $(HideOnWeb).addClass('d-none');
+      // hide cart at web
+      let HideOnWeb = `.uIdProduct${id}`;
+      $(HideOnWeb).addClass('d-none');
 
-          // remove on array
-          _unicIds = _unicIds.filter(item => item != unicId);
-          _initialCartValue = _initialCartValue.filter(item => item.unicId != unicId)
-          Add_To_Cookie()
+      // remove on array
+      _unicIds = _unicIds.filter(item => item != unicId);
+      _initialCartValue = _initialCartValue.filter(item => item.unicId != unicId)
+      Add_To_Cookie()
 
-          // add after btn
-          let New_Btn_Add_To_Cart = `.cartafter${id}`;
-          let selectedElement = $(New_Btn_Add_To_Cart)[0];
-          if (selectedElement) {
-              if ($('#main-cart')[0] != undefined) {
-                  selectedElement.outerHTML = `
+      // add after btn
+      let New_Btn_Add_To_Cart = `.cartafter${id}`;
+      let selectedElement = $(New_Btn_Add_To_Cart)[0];
+      if (selectedElement) {
+        if ($('#main-cart')[0] != undefined) {
+          selectedElement.outerHTML = `
           <a class="font1 p-2 w-50 rounded-1 box-user flex-center nav-link text-dark btn-add-to-cart${id}"
               onclick="add_to_cart(event, '${id}' , '${name}' , '${price}' , '${unicId}')">
               افزودن به سبد خرید
               <i class="bi bi-cart-plus p-1 rounded-1 font4 "></i>
           </a>
       `;
-              } else if ($('#maincartbox')[0] != undefined) {
-                  selectedElement.outerHTML = `
+        } else if ($('#maincartbox')[0] != undefined) {
+          selectedElement.outerHTML = `
           <a class="font1 p-2 w-50 rounded-1 box-user flex-center nav-link text-dark btn-add-to-cart${id}"
               onclick="add_to_cart(event, '${id}' , '${name}' , '${price}' , '${unicId}')">
               افزودن   
               <i class="bi bi-cart-plus p-1 rounded-1 font4 "></i>
           </a>
       `;
-              }
-          } else {
-              console.error(`Element with selector ${New_Btn_Add_To_Cart} not found.`);
-          }
+        }
+      } else {
+        console.error(`Element with selector ${New_Btn_Add_To_Cart} not found.`);
+      }
 
-          // refresh cart
-          Resualt_Cart_Number(_unicIds.length);
-      };
+      // refresh cart
+      Resualt_Cart_Number(_unicIds.length);
+    };
 
-      const Resualt_Cart_Number = (number) => {
-          $('#Resualt_Cart_Number')[0].innerHTML = number;
-          if (number == 0) {
-              $('#emtyCart').removeClass('d-none');
-              $('#btnCar0').addClass('d-none');
-          } else {
-              $('#emtyCart').addClass('d-none');
-              $('#btnCar0').removeClass('d-none');
-          }
-      };
+    const Resualt_Cart_Number = (number) => {
+      $('#Resualt_Cart_Number')[0].innerHTML = number;
+      if (number == 0) {
+        $('#emtyCart').removeClass('d-none');
+        $('#btnCar0').addClass('d-none');
+      } else {
+        $('#emtyCart').addClass('d-none');
+        $('#btnCar0').removeClass('d-none');
+      }
+    };
 
-      const add_to_cart = (e, id, name, price, unicId, state = true) => {
+    const add_to_cart = (e, id, name, price, unicId, state = true) => {
 
-          const RepeatCart = _unicIds.includes(unicId);
-          const initialCartValue = JSON.parse(getCookie("cart") || "[]");
-          let arr = []
-          arr = initialCartValue.filter((item) => {
-              return item.id == id
-          })
-          if (!RepeatCart) {
-              // unic field
-              _unicIds.push(unicId);
+      const RepeatCart = _unicIds.includes(unicId);
+      const initialCartValue = JSON.parse(getCookie("cart") || "[]");
+      let arr = []
+      arr = initialCartValue.filter((item) => {
+        return item.id == id
+      })
+      if (!RepeatCart) {
+        // unic field
+        _unicIds.push(unicId);
 
-              // local storage add
-              if (arr[0] == undefined) {
-                  _initialCartValue.push({ id, name, price, unicId })
-                  Add_To_Cookie()
-              }
+        // local storage add
+        if (arr[0] == undefined) {
+          _initialCartValue.push({ id, name, price, unicId })
+          Add_To_Cookie()
+        }
 
-              Add_cart_at_tag(id, name, price, unicId);
-              if (state) {
-                  Change_Text_Btn_Cart(e, id);
-              }
-              Resualt_Cart_Number(_unicIds.length);
-          }
+        Add_cart_at_tag(id, name, price, unicId);
+        if (state) {
+          Change_Text_Btn_Cart(e, id);
+        }
+        Resualt_Cart_Number(_unicIds.length);
+      }
 
-          if (_unicIds.length != 0) {
-              $('#emtyCart').addClass('d-none');
-              $('#btnCar0').removeClass('d-none')
-          } else {
-              $('#emtyCart').removeClass('d-none');
-              $('#btnCar0').addClass('d-none')
-          }
-
-
-      };
+      if (_unicIds.length != 0) {
+        $('#emtyCart').addClass('d-none');
+        $('#btnCar0').removeClass('d-none')
+      } else {
+        $('#emtyCart').removeClass('d-none');
+        $('#btnCar0').addClass('d-none')
+      }
 
 
-
-      // تابع جدید برای خواندن مقدار از کوکی
-      const getCookie = (name) => {
-          return $.cookie(name);
-      };
+    };
 
 
-      // مدیریت کوکی‌ها
-      const ManageCookies = (() => {
-          const cookieCart = getCookie("cart");
-          if (cookieCart) {
-              const parsedCart = JSON.parse(cookieCart);
-              parsedCart.forEach(item => {
-                  let calssQ = `.btn-add-to-cart${item.id}`
-                  if ($(calssQ)[0] != undefined) {
-                      if ($('#main-cart')[0] != undefined) {
-                          $(calssQ)[0].outerHTML = `<section class="main-body-countainer-header text-center mb-2 cartafter${item.id}" >
+
+    // تابع جدید برای خواندن مقدار از کوکی
+    const getCookie = (name) => {
+      return $.cookie(name);
+    };
+
+
+    // مدیریت کوکی‌ها
+    const ManageCookies = (() => {
+      const cookieCart = getCookie("cart");
+      if (cookieCart) {
+        const parsedCart = JSON.parse(cookieCart);
+        parsedCart.forEach(item => {
+          let calssQ = `.btn-add-to-cart${item.id}`
+          if ($(calssQ)[0] != undefined) {
+            if ($('#main-cart')[0] != undefined) {
+              $(calssQ)[0].outerHTML = `<section class="main-body-countainer-header text-center mb-2 cartafter${item.id}" >
                   <hr>
                       <div class="d-flex justify-content-center ">
                           <div class="position-relative w-line3">
@@ -681,16 +698,16 @@
                           </div>
                       </div>
                   </section>`;
-                      } else if ($('#maincartbox')[0] != undefined) {
-                          $(calssQ)[0].outerHTML = `<a class="font1 cb-text fadeInAs btn  cartafter${item.id}"><span>در سبد خرید</span></a>`;
-                      }
-                  }
-                  add_to_cart(null, item.id, item.name, item.price, item.unicId, false);
-              });
+            } else if ($('#maincartbox')[0] != undefined) {
+              $(calssQ)[0].outerHTML = `<a class="font1 cb-text fadeInAs btn  cartafter${item.id}"><span>در سبد خرید</span></a>`;
+            }
           }
-      })();
+          add_to_cart(null, item.id, item.name, item.price, item.unicId, false);
+        });
+      }
+    })();
   </script>
- 
+
 </body>
 
 </html>
