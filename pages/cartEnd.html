@@ -8,7 +8,7 @@
     <title>
         تیزهو
         |
-        پکیج دهم انسانی
+        سبد خرید
     </title>
     <meta name="description" content="تیزهو مرکز مشاوره تحصیلی تیز هوشان">
 
@@ -164,98 +164,112 @@
     </header>
 
     <main class="bg-product py-3" id="main-cart">
-        <section class="py-2 py-md-5 container">
+        <section class="py-2 py-md-5 container" id="end-cart">
             <div class="row">
 
                 <!-- detailes  heding -->
                 <div class="col-12 col-md-8">
                     <div class="card no-shadow border-0">
                         <div class="card-body p-4 product-detail">
-                            <h1 class="font6"> بسته آموزشی شیمی 2</h1>
+                            <h1 class="font4">
 
-                            <!-- heading  -->
-                            <div class="my-3">
-                                <div class=" d-flex product-heading-value">
-                                    <h6 class=" font2">
-                                        پایه و رشته
-                                        :
-                                    </h6>
-                                    <p class="font2 mx-2">
-                                        یازدهم, دوازدهم رشته رياضي, تجربي
-                                    </p>
+                                سبد خرید
+                                &nbsp;
+                                |
+                                &nbsp;
+
+                                <span class="badge btn-brand text-dark font2">خرید نهایی </span>
+                            </h1>
+                            <hr>
+
+                            <!--? cart emty  -->
+                            <!-- <section>
+                                <div class="flex-center">
+                                    <img src="../assets/images/object/empty-cart.svg" alt="emty-cart" class="img-fluid">
                                 </div>
-
-                                <div class=" d-flex product-heading-value ">
-                                    <h6 class="font2">
-                                        زمان آزمون
-                                        :
-                                    </h6>
-                                    <p class="font2 mx-2">
-                                        <span>08</span>/
-                                        <span>02</span>/
-                                        <span>1402</span>
-                                    </p>
+                                <div class="flex-center">
+                                    <p>سبد خرید شما خالی است !</p>
                                 </div>
-                            </div>
+                            </section> -->
 
-                            <!-- detail   -->
-                            <div class="my-3 box-tizho-how">
-                                <div class=" d-flex product-heading-value ">
-                                    <h6 class="font2">
-                                        توضیحات
-                                        :
-                                    </h6>
 
-                                </div>
-                                <p class="card-text text-right my-2" style="line-height: 1.4rem;">
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
-                                    گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
-                                    برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
-                                    می باشد،
-                                </p>
-                            </div>
+                            <!--? product cart  -->
+                            <ul class="d-flex flex-column li-cart px-0 cart-endpoint" id="cart-box">
+                                <!-- <li class="row uIdProduct2">
+                                    <div class="col-2">
+                                        <img src="../assets/./images/logo/Logo-green.png" class="img-fluid" alt=""
+                                            style="width: 30px;height: 30px;">
+                                    </div>
+                                    <div class="col-8 ">
+                                        <div class="d-flex flex-column">
+                                            <h5 class="font2" style="line-height: 1.3rem;"> پکیج آزمون سال دهم تجربی
+                                            </h5>
+                                            <p class="font1">
+                                                <span>قیمت :</span>
+                                                295,000
+                                                <span>تومان</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-1">
+                                        <i class="bi bi-trash rounded-1 font6 text-brand"
+                                            onclick="remove_at_cart('2' , 'پکیج آزمون سال دهم تجربی' , '295,000' , '#efg456')"></i>
+                                    </div>
+                                </li> -->
 
-                            <!-- detail soalat -->
-                            <div class="my-3 box-tizho-how">
-                                <div class=" d-flex product-heading-value ">
-                                    <h6 class="font2">
-                                        دانلود سوالات
-                                        :
-                                    </h6>
-
-                                </div>
-                                <div class="card-text text-right my-2 d-flex justify-content-between flex-wrap"
-                                    style="line-height: 1.4rem;">
-                                    <a href="#" class="my-2 mx-1 cb-text-link">
-                                        <i class="bi bi-file-earmark-arrow-down-fill font5 "></i>
-                                        <span class="font2"> بسته : سوالات ریاضی سال دهم</span>
-                                    </a>
-                                    <a href="#" class="my-2 mx-1 cb-text-link">
-                                        <i class="bi bi-file-earmark-arrow-down-fill font5"></i>
-                                        <span class="font2"> بسته : سوالات ریاضی سال دهم</span>
-                                    </a>
-                                    <a href="#" class="my-2 mx-1 cb-text-link">
-                                        <i class="bi bi-file-earmark-arrow-down-fill font5"></i>
-                                        <span class="font2"> بسته : سوالات ریاضی سال دهم</span>
-                                    </a>
-                                    <a href="#" class="my-2 mx-1 cb-text-link">
-                                        <i class="bi bi-file-earmark-arrow-down-fill font5"></i>
-                                        <span class="font2"> بسته : سوالات ریاضی سال دهم</span>
-                                    </a>
-
-                                </div>
-                            </div>
+                                <section id="emtyCart">
+                                    <div class="flex-center">
+                                        <img src="../assets/images/object/empty-cart.svg" alt="emty-cart"
+                                            class="img-fluid">
+                                    </div>
+                                    <div class="flex-center">
+                                        <p>سبد خرید شما خالی است !</p>
+                                    </div>
+                                </section>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- cart   -->
+
+
+                <!-- cart  price -->
                 <div class="col-12 col-md-4 mt-3 mt-md-0">
+                    <div class="card no-shadow border-0 p-2 ">
+                        <div class="card-body pt-0 ">
+                            <div class="  product-heading-value ">
+                                <h6 class="text-muted font2 ">
+                                    نحوه پرداخت
+                                    :
+                                </h6>
+                                <select class="form-select formStyle mt-3"  >
+                                    <option selected class="d-none font1"> -- انتخاب کنید</option>
+                                    <option value="1">حضوری</option>
+                                    <option value="2">آنلاین</option>
+                                </select>
+                            </div>
+
+
+
+                        </div>
+
+
+                        <!--? free product  -->
+                        <!-- <section class="main-body-countainer-header text-center mb-2 ">
+                            <hr>
+                            <div class="d-flex justify-content-center ">
+                                <div class="position-relative w-line3">
+                                    <h5 class="font3 hr-Header "> رایگان  </h5>
+                                </div>
+                            </div>
+                        </section> -->
+                    </div>
+                    <br>
                     <div class="card no-shadow border-0 p-2">
                         <div class="card-body pt-0 ">
                             <div class=" d-flex justify-content-between align-items-start product-heading-value ">
                                 <h6 class="text-muted font2 ">
-                                    قیمت
+                                    قیمت کل
                                     :
                                 </h6>
                                 <p class="font2 mx-2" style="color: #464646;">
@@ -265,7 +279,7 @@
 
                             <div class=" d-flex justify-content-between align-items-start product-heading-value ">
                                 <h6 class="text-muted font2 ">
-                                    قیمت با تخفیف
+                                    قیمت کل با تخفیف
                                     :
                                 </h6>
                                 <p class="font2 mx-2" style="color: #464646;">
@@ -277,11 +291,13 @@
 
                         <!--? add product in cart  -->
 
-                        <a class="font1 p-2 rounded-1 w-50 m-3  box-user flex-center nav-link text-dark btn-add-to-cart2"
-                            onclick="add_to_cart(event, '2', 'پکیج آزمون سال دهم تجربی', '295,000', '#efg456')">
-                            افزودن به سبد خرید
-                            <i class="bi bi-cart-plus p-1 rounded-1 font4 "></i>
-                        </a>
+                        <div class="flex-center">
+                            <a class="font2 p-2 rounded-1 box-user flex-center nav-link text-dark"
+                                style="width: 150px;margin-right: 0px;">
+                                نهایی کردن خرید
+                                <i class="bi bi-cart   p-1 rounded-1 font6 "></i>
+                            </a>
+                        </div>
 
                         <!--? free product  -->
                         <!-- <section class="main-body-countainer-header text-center mb-2 ">
@@ -297,6 +313,7 @@
             </div>
         </section>
     </main>
+
 
     <footer class="tizho-footer-bg">
 
