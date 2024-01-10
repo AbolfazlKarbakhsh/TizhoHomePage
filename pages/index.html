@@ -87,7 +87,7 @@
     </div>
 
     <header class="sticky-top-01 bg-white sh">
-        <div class="container d-flex py-0 justify-content-between align-items-center ">
+        <div class="container d-flex py-0 justify-content-between align-items-center position-relative">
             <!--? logo  -->
             <a class="flex-center" href="#">
                 <img src="../assets/images/logo/logoforsite.png" alt="" class="img-fluid" style="width: 65px;"
@@ -99,7 +99,7 @@
             <!--? fother navbar mobile dark -->
             <div class="fother-nav  d-md-none" id="fother-nav"></div>
             <!--? navbar -->
-            <nav class="navbar no-center-align navbar-expand-md  show-menu overflow-y-auto d-md-flex " id="navbar">
+            <nav class="navbar no-center-align navbar-expand-md  show-menu overflow-y-auto d-md-flex  overflow-x-none" id="navbar">
                 <div class="navbar-nav pt-3 h-100 justify-content-between">
 
                     <div class="d-flex flex-column flex-md-row">
@@ -128,13 +128,43 @@
                     </div>
 
                     <!-- show mobile -->
-                    <li class="nav-item mx-1 flex-center d-md-none" style="margin-bottom: 50px;">
-                        <p class="font2 p-2 rounded-1 box-user flex-center" style="width: 150px;margin-right: 70px;">
-                            <i class="bi bi-person   p-1 rounded-1 font6 "></i>
-                            مدیریت حساب
-                        </p>
-                    </li>
-                </div>
+                    <!-- <div class="d-flex flex-wrap pe-4 pe-5 mb-4" >
+                        <li class="nav-item  flex-center d-md-none mx-0" >
+                            <p class="font2 p-2 rounded-1 box-user flex-center"
+                               >
+                                <i class="bi bi-person   p-1 rounded-1 font4 "></i>
+                                مدیریت حساب
+                            </p>
+                        </li>
+
+                        <li class="nav-item flex-center d-md-none mx-0" >
+                            <p class="font2 p-2 rounded-1 box-user flex-center">
+                                <i class="bi bi-escape   p-1 ms-2 rounded-1 font4 "></i>
+                                خروج 
+                            </p>
+                        </li>
+                    </div> -->
+
+                    <div class="d-flex  pe-5 mb-4">
+                        <li class="nav-item  flex-center d-md-none mx-0">
+                            <p class="font2 p-2 rounded-1 box-user flex-center">
+                                <i class="bi bi-person-plus   p-1 rounded-1 font4 "></i>
+                                ثبت نام
+                            </p>
+                        </li>
+
+                        <li class="nav-item flex-center d-md-none mx-0">
+                            <p class="font2 p-2 rounded-1 box-user flex-center">
+                                <i class="bi bi-door-open   p-1 ms-2 rounded-1 font4 "></i>
+                                ورود
+                            </p>
+                        </li>
+                    </div>
+
+                    <!-- close mega menu  -->
+                    <div class="text-white posation-close-megamenu d-md-none ">
+                        <i class="bi bi-x   p-1 ms-2 rounded-1 font10 " id="close-icon"></i>
+                    </div>
             </nav>
             <!--? icons -->
             <div class="flex-center">
@@ -160,6 +190,9 @@
                     </p>
                 </div>
             </div>
+
+
+        </div>
         </div>
     </header>
 
@@ -174,7 +207,7 @@
                         <!-- titrs content  -->
                         <div class="content-banner mt-5">
                             <h1> موسسه تخصصی تحصیلی تیزهو ؛</h1>
-                            <p>جامع ترین موسسه  تحصیلی  تیزهوشان در سر تا سر کشور</p>
+                            <p>جامع ترین موسسه تحصیلی تیزهوشان در سر تا سر کشور</p>
                         </div>
 
                         <!-- numbers  -->
@@ -1318,10 +1351,10 @@
 
                 </div>
                 <!-- show mobile -->
-                <li class="nav-item mx-1 flex-center  d-none" id="btnCar0">
+                <li class="nav-item mx-1 flex-center  d-none mb-4" id="btnCar0">
                     <a class="font2 p-2 rounded-1 box-user flex-center nav-link text-dark"
                         style="width: 150px;margin-right: 0px;">
-                        نهایی کردن خرید
+                          مشاهده سبد خرید
                         <i class="bi bi-cart   p-1 rounded-1 font6 "></i>
                     </a>
                 </li>

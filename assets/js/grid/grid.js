@@ -67,6 +67,12 @@ $(document).ready(function () {
     $("#fother-nav2").animate({ width: "0px" }, 300);
   });
 
+  $("#close-icon").click(() => {
+    $("#navbar").animate({ width: "0px" }, 300);
+    $("#fother-nav").animate({ width: "0px" }, 300);
+  })
+
+
   //******************************
   //!        menu bergar
   //******************************

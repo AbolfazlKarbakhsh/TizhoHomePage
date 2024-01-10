@@ -1680,4 +1680,23 @@ main .text-notic {
 
 .cart-endpoint * .bi-trash {
   display: none;
+}
+
+.posation-close-megamenu {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  background-color: #212529;
+  z-index: 9999999999;
+  border-radius: 50%;
+  width: 40px;
+}
+.posation-close-megamenu i {
+  font-size: 2rem;
+  color: #04b19d;
+  cursor: pointer;
+}
+
+.overflow-x-none {
+  overflow-x: hidden;
 }/*# sourceMappingURL=index.css.map */
