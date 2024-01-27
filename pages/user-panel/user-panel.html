@@ -222,15 +222,17 @@
                 </div>
                 <div class="col-12 col-md-6 my-1">
 
-                  <select type="text" id="city" class="form-select formStyle formPlac " name="city" list="cityList">
-                    <option value="تهران">تهران</option>
-                    <option value="اصفهان">اصفهان</option>
-                    <option value="شیراز">شیراز</option>
-                    <option value="مشهد">مشهد</option>
-                    <option value="تبریز">تبریز</option>
+                  <select class="js-example-basic-single   form-control py-2 font1" name="state">
+                    <option value="AL" class="font1" disabled selected>انتخاب کنید</option>
+                    <option value="WY" class="font1">کرمان</option>
+                    <option value="WY" class="font1">تهران</option>
+                    <option value="WY" class="font1">Wyoming</option>
+                    <option value="WY" class="font1">Wyoming</option>
                   </select>
 
                 </div>
+
+
                 <div class="col-12 col-md-6 my-1">
                   <input type="text" class="formStyle formPlace" placeholder="پسورد   ">
                   <!-- <span class="font1 m-0 p-0 text-danger mb-2">نام خانوادگی وارد شده صحیح نمی باشد !</span> -->
@@ -520,6 +522,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
   <!--! script add to cart -->
   <script>
     const _cart = $("#cart-box");
@@ -703,6 +708,19 @@
         });
       }
     })();
+
+
+
+  </script>
+
+  <script>
+    // usage select 2 
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function () {
+      $('.js-example-basic-single').select2();
+    });
+
+    // برای هر تگ باید اینجوری یک بار معرفی بشه 
   </script>
 
 </body>

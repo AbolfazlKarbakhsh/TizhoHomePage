@@ -1699,4 +1699,8 @@ main .text-notic {
 
 .overflow-x-none {
   overflow-x: hidden;
+}
+
+.text-deactive {
+  color: rgba(39, 39, 39, 0.5764705882);
 }/*# sourceMappingURL=index.css.map */
