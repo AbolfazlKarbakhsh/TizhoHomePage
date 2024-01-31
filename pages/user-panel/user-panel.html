@@ -203,22 +203,22 @@
         <!-- cols left  -->
         <section class=" col-12 px-2  col-lg-8 ">
           <div class="sidebar-widget noSelect bg-dash">
-            <h2 class="font3 mb-2 p-2"> اطلاعات کاربری شما :</h2>
+            <h2 class="font3 mb-2 p-2"> محصولات خریداری شده :</h2>
             <hr>
 
             <form>
-              <div class="row px-2">
+              <!-- <div class="row px-2">
                 <div class="col-12 col-md-6 my-1">
                   <input type="text" class="formStyle formPlace" placeholder=" نام">
-                  <!-- <span class="font1 m-0 p-0 text-danger mb-2">نام وارد شده صحیح نمی باشد !</span> -->
+                  <span cass="font1 m-0 p-0 text-danger mb-2">نام وارد شده صحیح نمی باشد !</span>
                 </div>
                 <div class="col-12 col-md-6 my-1">
                   <input type="text" class="formStyle formPlace" placeholder="نام خانوادگی  ">
-                  <!-- <span class="font1 m-0 p-0 text-danger mb-2">نام خانوادگی وارد شده صحیح نمی باشد !</span> -->
+                  <span class="font1 m-0 p-0 text-danger mb-2">نام خانوادگی وارد شده صحیح نمی باشد !</span>
                 </div>
                 <div class="col-12 col-md-6 my-1">
                   <input type="text" class="formStyle formPlace" placeholder=" تلفن تماس">
-                  <!-- <span class="font1 m-0 p-0 text-danger mb-2">نام وارد شده صحیح نمی باشد !</span> -->
+                  <span class="font1 m-0 p-0 text-danger mb-2">نام وارد شده صحیح نمی باشد !</span>
                 </div>
                 <div class="col-12 col-md-6 my-1">
 
@@ -235,11 +235,11 @@
 
                 <div class="col-12 col-md-6 my-1">
                   <input type="text" class="formStyle formPlace" placeholder="پسورد   ">
-                  <!-- <span class="font1 m-0 p-0 text-danger mb-2">نام خانوادگی وارد شده صحیح نمی باشد !</span> -->
+                  <span class="font1 m-0 p-0 text-danger mb-2">نام خانوادگی وارد شده صحیح نمی باشد !</span>
                 </div>
                 <div class="col-12 col-md-6 my-1">
                   <input type="text" class="formStyle formPlace" placeholder="تکرار پسورد   ">
-                  <!-- <span class="font1 m-0 p-0 text-danger mb-2">نام خانوادگی وارد شده صحیح نمی باشد !</span> -->
+                  <span class="font1 m-0 p-0 text-danger mb-2">نام خانوادگی وارد شده صحیح نمی باشد !</span>
                 </div>
 
                 <div class="d-flex justify-content-center mt-1">
@@ -249,17 +249,54 @@
                 </div>
 
 
-              </div>
+              </div> -->
 
-              <div class="d-flex justify-content-end mt-3">
 
+              <!-- <div class="d-flex justify-content-end mt-3">
 
                 <button class="btn btn-success font3 mx-2">
                   ویرایش
                 </button>
-              </div>
+              </div> -->
 
             </form>
+            <div  style="overflow-x:auto;">
+              <table class="table table-light table-respansive w-100">
+                <thead>
+                  <tr class="no-fw td-center td-font-4" scope="row">
+                    <td  colspan="2">نام محصول</td>
+                    <td>قیمت</td>
+                    <td>تخفیف</td>
+                    <td>وضعیت</td>
+                    <td  colspan="2">شماره پیگیری</td>
+
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr class="td-center td-font-4 td-body-font " scope="row">
+                    <td class="" colspan="2">آزمون ریاضی سال دوازدهم</td>
+
+                    <td>
+                      <span>150,000</span>
+                      <span>تومان</span>
+                    </td>
+                    <td>
+                      <span class="badge bg-danger ">50%</span>
+                    </td>
+                    <td>
+                      <span class="badge bg-danger">غیر فعال</span>
+                      <!-- <span class="badge bg-success">فعال</span>d -->
+                      <!-- <span class="badge bg-primary">در حال برسی</span> -->
+                    </td>
+                    <td colspan="2">
+                      <span>567854565</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
 
           </div>
 

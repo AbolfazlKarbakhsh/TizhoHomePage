@@ -1029,6 +1029,23 @@ main {
     overflow-x: hidden;
 }
 
-.text-deactive{
+.text-deactive {
     color: #27272793;
+}
+
+.no-fw * {
+    font-weight: 100 !important;
+}
+
+.td-center td {
+    text-align: center;
+}
+
+.td-font-4 {
+    font-size: .8rem;
+}
+
+.td-font-4 td {
+    font-size: .8rem;
+
 }

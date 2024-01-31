@@ -1703,4 +1703,20 @@ main .text-notic {
 
 .text-deactive {
   color: rgba(39, 39, 39, 0.5764705882);
+}
+
+.no-fw * {
+  font-weight: 100 !important;
+}
+
+.td-center td {
+  text-align: center;
+}
+
+.td-font-4 {
+  font-size: 0.8rem;
+}
+
+.td-font-4 td {
+  font-size: 0.8rem;
 }/*# sourceMappingURL=index.css.map */
